@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "premiere-pro": {
+      "command": "npx",
+      "args": ["-y", "premiere-pro-mcp"],
+      "env": {
+        "PREMIERE_TIMEOUT_MS": "30000",
+        "PREMIERE_MCP_CAPABILITIES": "inspect,edit,export,filesystem"
+      }
+    }
+  }
+}

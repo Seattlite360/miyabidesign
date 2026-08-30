@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" width="1200" height="1000">
+  <title>Sylva Residences — Type Specimen</title>
+  <desc>One sample per role from sylva-palette-type-spec.md, for checking pairing and tracking before it goes to a logomark artist.</desc>
+
+  <rect x="0" y="0" width="1200" height="1000" fill="#FBF7EF"/>
+
+  <text x="60" y="70" font-family="Poppins, Arial, sans-serif" font-weight="300" font-size="20" letter-spacing="4" fill="#211913">SYLVA RESIDENCES — TYPE SPECIMEN</text>
+  <rect x="60" y="90" width="1080" height="1" fill="#DCCEB2"/>
+
+  <!-- Wordmark: SYLVA -->
+  <text x="60" y="230" font-family="Manrope, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="140" letter-spacing="-2" fill="#211913">SYLVA</text>
+  <text x="60" y="262" font-family="Poppins, Arial, sans-serif" font-weight="300" font-size="14" letter-spacing="2" fill="#5B4E42">MANROPE — EXTRABOLD (800)</text>
+
+  <!-- Wordmark: RESIDENCES -->
+  <text x="60" y="330" font-family="Poppins, 'Helvetica Neue', Arial, sans-serif" font-weight="300" font-size="48" letter-spacing="16" fill="#211913">RESIDENCES</text>
+  <text x="60" y="356" font-family="Poppins, Arial, sans-serif" font-weight="300" font-size="14" letter-spacing="2" fill="#5B4E42">POPPINS — LIGHT (300), TRACKED CAPS</text>
+
+  <rect x="60" y="400" width="1080" height="1" fill="#DCCEB2"/>
+
+  <!-- Editorial accent -->
+  <text x="60" y="480" font-family="Newsreader, Georgia, serif" font-style="italic" font-weight="300" font-size="40" fill="#4F2A19">A quiet address on the river, Toowong.</text>
+  <text x="60" y="506" font-family="Poppins, Arial, sans-serif" font-weight="300" font-size="14" letter-spacing="2" fill="#5B4E42">NEWSREADER — LIGHT ITALIC (300) — EDITORIAL ACCENT, OPTIONAL</text>
+
+  <rect x="60" y="550" width="1080" height="1" fill="#DCCEB2"/>
+
+  <!-- Supporting / body copy -->
+  <text x="60" y="600" font-family="Poppins, Arial, sans-serif" font-weight="300" font-size="14" letter-spacing="2" fill="#5B4E42">POPPINS — LIGHT (300) — SUPPORTING / BODY COPY</text>
+  <text x="60" y="640" font-family="Poppins, Arial, sans-serif" font-weight="300" font-size="22" fill="#211913">
+    <tspan x="60" dy="0">Sylva Residences sits at 22–24 Sylvan Road, Toowong — full-bleed, photography-led,</tspan>
+    <tspan x="60" dy="32">editorial in tone, drawn from the building's own renders rather than stock.</tspan>
+  </text>
+
+  <rect x="60" y="700" width="1080" height="1" fill="#DCCEB2"/>
+
+  <!-- Palette strip for quick color/type pairing check -->
+  <g transform="translate(60,730)">
+    <rect x="0" y="0" width="60" height="60" fill="#EFE4D2" stroke="#DCCEB2"/>
+    <rect x="70" y="0" width="60" height="60" fill="#211913"/>
+    <rect x="140" y="0" width="60" height="60" fill="#8C5943"/>
+    <rect x="210" y="0" width="60" height="60" fill="#5A5B40"/>
+    <rect x="280" y="0" width="60" height="60" fill="#4F2A19"/>
+    <text x="0" y="85" font-family="Poppins, Arial, sans-serif" font-size="13" fill="#5B4E42">Stone / Ink / Copper / Sage / Umber — see Sylva-Palette-Sheet.svg for the full set</text>
+  </g>
+
+  <text x="60" y="960" font-family="Newsreader, Georgia, serif" font-style="italic" font-size="16" fill="#5B4E42">Install Manrope, Poppins and Newsreader from Google Fonts before opening this file — see illustrator/README.md.</text>
+</svg>

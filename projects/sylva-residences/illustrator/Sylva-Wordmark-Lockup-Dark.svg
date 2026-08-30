@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <title>Sylva Residences — Wordmark Lockup (Reversed / Dark)</title>
+  <desc>
+    Reversed lockup for dark grounds (signage, dusk photography overlays). Uses the dark-mode
+    token values from sylva-palette-type-spec.md, not a simple color invert.
+  </desc>
+
+  <rect x="0" y="0" width="1200" height="800" fill="#191512"/>
+
+  <g id="lockup" text-anchor="middle">
+    <text x="600" y="410"
+          font-family="Manrope, 'Helvetica Neue', Arial, sans-serif"
+          font-weight="800"
+          font-size="180"
+          letter-spacing="-2"
+          fill="#F0E6D8">SYLVA</text>
+
+    <text x="600" y="470"
+          font-family="Poppins, 'Helvetica Neue', Arial, sans-serif"
+          font-weight="300"
+          font-size="42"
+          letter-spacing="14"
+          fill="#C7B9A8">RESIDENCES</text>
+
+    <rect x="520" y="500" width="160" height="2" fill="#C97F5C"/>
+  </g>
+
+  <text x="600" y="740"
+        text-anchor="middle"
+        font-family="Newsreader, Georgia, serif"
+        font-style="italic"
+        font-weight="300"
+        font-size="24"
+        fill="#C7B9A8">22–24 Sylvan Road, Toowong</text>
+</svg>

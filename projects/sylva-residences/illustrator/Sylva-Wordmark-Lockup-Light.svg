@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <title>Sylva Residences — Wordmark Lockup (Light)</title>
+  <desc>
+    Recommended lockup: Manrope ExtraBold (SYLVA) + Poppins Light, tracked caps (RESIDENCES).
+    Install Manrope and Poppins from Google Fonts for correct rendering/editing in Illustrator.
+  </desc>
+
+  <rect x="0" y="0" width="1200" height="800" fill="#EFE4D2"/>
+
+  <g id="lockup" text-anchor="middle">
+    <text x="600" y="410"
+          font-family="Manrope, 'Helvetica Neue', Arial, sans-serif"
+          font-weight="800"
+          font-size="180"
+          letter-spacing="-2"
+          fill="#211913">SYLVA</text>
+
+    <text x="600" y="470"
+          font-family="Poppins, 'Helvetica Neue', Arial, sans-serif"
+          font-weight="300"
+          font-size="42"
+          letter-spacing="14"
+          fill="#5B4E42">RESIDENCES</text>
+
+    <rect x="520" y="500" width="160" height="2" fill="#8C5943"/>
+  </g>
+
+  <text x="600" y="740"
+        text-anchor="middle"
+        font-family="Newsreader, Georgia, serif"
+        font-style="italic"
+        font-weight="300"
+        font-size="24"
+        fill="#5B4E42">22–24 Sylvan Road, Toowong</text>
+</svg>

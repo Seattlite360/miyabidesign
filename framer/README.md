@@ -21,6 +21,7 @@ The single lead form for the pricing funnel: an agent asks for a free sample pac
 - Reply `{"ok":true}`. Any 2xx counts as sent unless the JSON says `ok:false` or `success:false`.
 - Payload keys: `form`, `request_type`, `tier`, `name`, `agency`, `mobile`, `email`, `agents`, `listing_url`, `best_time_to_call`, `source_url`, `utm_source`, `utm_medium`, `utm_campaign`, `timestamp` (ISO, UTC).
 - A honeypot field catches bots. It is never sent.
+- A ready-made receiver is in [`../apps-script/pricing-requests.gs`](../apps-script/pricing-requests.gs) (validates the payload, appends a Sheet row, emails an alert). Deploy it as a Web app and paste its URL into the Endpoint URL property.
 
 **Brand:** follows [`docs/MIYABI-BRAND.md`](../docs/MIYABI-BRAND.md). Poppins, `#FFFFFF` canvas, `#000000` ink, `#696969` secondary text, `#F2F2F2` tint, Miyabi Red `#AC3235` only on the primary button and the kanji timeline numerals.
 

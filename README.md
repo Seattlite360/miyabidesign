@@ -8,6 +8,7 @@ Project repo for Miyabi Design (雅) — brand reference, Claude Code project sk
 - **`.claude/skills/`** — 62 project-level Claude Code skills from [wondelai/skills](https://github.com/wondelai/skills) (MIT licensed — see `.claude/skills/LICENSE-wondelai-skills.md`). Because these live under `.claude/skills/` in this repo, any Claude Code session opened here picks them up automatically — no separate install step. Highlights for this project: `top-design`, `refactoring-ui`, `web-typography`, `ux-heuristics`, `design-everyday-things`, `storybrand-messaging`, `cro-methodology`, `one-page-marketing`.
 
 - **`framer/`** — Framer code components for the site. `framer/components/MiyabiRequestForm.tsx` is the pricing-page lead form; see `framer/README.md` for its properties and submit contract.
+- **`apps-script/`** — Google Apps Script receivers for form submissions. `apps-script/pricing-requests.gs` writes the pricing-page requests to a Google Sheet; setup steps are in the file header.
 
 ## Usage
 

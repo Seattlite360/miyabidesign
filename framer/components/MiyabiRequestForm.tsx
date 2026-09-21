@@ -20,6 +20,11 @@ import { addPropertyControls, ControlType } from "framer"
  *   listing_url, best_time_to_call, source_url, utm_source, utm_medium, utm_campaign,
  *   timestamp (ISO, UTC).
  *
+ * SECOND DESTINATION: the same payload is also POSTed as multipart form data to Splitforms
+ * (https://splitforms.com/api/submit, form "Miyabi - Pricing Request") so there is an inbox and a record even if
+ * the Apps Script is down. Both fire together; the request counts as sent if EITHER accepts it. Clear the
+ * Splitforms key property to turn it off.
+ *
  * The honeypot is never sent: a bot that fills it sees the success screen and nothing posts.
  */
 
@@ -42,6 +47,7 @@ interface Values {
 
 interface MiyabiRequestFormProps {
     endpointUrl: string
+    splitformsKey: string
     defaultType: RequestType
     sampleHeading: string
     startHeading: string
@@ -331,6 +337,7 @@ function ChoiceGroup(p: ChoiceGroupProps) {
 export default function MiyabiRequestForm(props: MiyabiRequestFormProps) {
     const {
         endpointUrl = "",
+        splitformsKey = "0b054c3d0fc2407ea9fb7f6faaade6ad",
         defaultType = "sample",
         sampleHeading = "Get your free sample pack",
         startHeading = "Start with the {tier} plan",
@@ -529,15 +536,15 @@ export default function MiyabiRequestForm(props: MiyabiRequestFormProps) {
 
         const controller = new AbortController()
         const timer = window.setTimeout(() => controller.abort(), 15000)
-        try {
-            if (!endpointUrl) throw new Error("No endpoint URL set in the component properties")
+
+        async function toAppsScript() {
             const res = await fetch(endpointUrl, {
                 method: "POST",
                 headers: { "Content-Type": "text/plain;charset=utf-8" },
                 body: JSON.stringify(payload),
                 signal: controller.signal,
             })
-            if (!res.ok) throw new Error(`Endpoint replied ${res.status}`)
+            if (!res.ok) throw new Error(`Apps Script replied ${res.status}`)
             let rejected = false
             try {
                 const data = await res.json()
@@ -545,7 +552,41 @@ export default function MiyabiRequestForm(props: MiyabiRequestFormProps) {
             } catch {
                 /* a non-JSON reply from a 2xx is still a send */
             }
-            if (rejected) throw new Error("Endpoint reported a failure")
+            if (rejected) throw new Error("Apps Script reported a failure")
+        }
+
+        async function toSplitforms() {
+            const fd = new FormData()
+            fd.append("access_key", splitformsKey)
+            fd.append("subject", `Miyabi pricing request: ${payload.request_type} (${payload.agency})`)
+            for (const [k, v] of Object.entries(payload)) fd.append(k, String(v ?? ""))
+            const res = await fetch("https://splitforms.com/api/submit", {
+                method: "POST",
+                headers: { Accept: "application/json" },
+                body: fd,
+                signal: controller.signal,
+            })
+            if (!res.ok) throw new Error(`Splitforms replied ${res.status}`)
+            let rejected = false
+            try {
+                const data = await res.json()
+                rejected = data?.success === false
+            } catch {
+                /* non-JSON 2xx still counts */
+            }
+            if (rejected) throw new Error("Splitforms reported a failure")
+        }
+
+        try {
+            const jobs: Promise<void>[] = []
+            if (endpointUrl) jobs.push(toAppsScript())
+            if (splitformsKey) jobs.push(toSplitforms())
+            if (!jobs.length) throw new Error("Set an Endpoint URL or a Splitforms key in the component properties")
+            const results = await Promise.allSettled(jobs)
+            results.forEach((r) => {
+                if (r.status === "rejected") console.warn("[MiyabiRequestForm] one destination failed:", r.reason)
+            })
+            if (!results.some((r) => r.status === "fulfilled")) throw new Error("Every destination failed")
 
             setSent({ first: firstName, type })
             setStatus("idle")
@@ -793,6 +834,12 @@ addPropertyControls(MiyabiRequestForm, {
         title: "Endpoint URL",
         defaultValue: "",
         placeholder: "https://script.google.com/macros/s/.../exec",
+    },
+    splitformsKey: {
+        type: ControlType.String,
+        title: "Splitforms key",
+        defaultValue: "0b054c3d0fc2407ea9fb7f6faaade6ad",
+        description: "Backup inbox (Miyabi - Pricing Request). Clear to turn it off.",
     },
     defaultType: {
         type: ControlType.Enum,

@@ -31,7 +31,7 @@ Two switches on `<html>` in `index.html`, overrides in `css/versions.css`:
 | Switch | Values | Default |
 |---|---|---|
 | `data-palette` | `v5` creams, Copper, forest greens, light only; `v4` Stone / Copper / Sage / Umber with dark mode; `v3` Paper / Canopy / Aqua (original) | `v5` |
-| `data-type` | `v2` Marcellus display + Elgoc tagline, `original` Ambroise | `v2` |
+| `data-type` | `v3` Elgoc display + Inter tagline; `v2` Marcellus display + Elgoc tagline; `original` Ambroise | `v3` |
 
 Compare without editing anything: `?palette=v4`, `?palette=v3`, `?type=original`, or combine them. To go back for good,
 set the attributes on `<html>` to `v3` / `original`. The first build is commit `60b8aa2`.

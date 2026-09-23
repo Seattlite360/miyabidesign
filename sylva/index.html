@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-AU" data-theme="day" data-palette="v5" data-type="v2">
+<html lang="en-AU" data-theme="day" data-palette="v5" data-type="v3">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -34,7 +34,7 @@
       try {
         var q = new URLSearchParams(location.search);
         if (/^(v3|v4|v5)$/.test(q.get('palette') || '')) d.setAttribute('data-palette', q.get('palette'));
-        if (/^(original|v2)$/.test(q.get('type') || '')) d.setAttribute('data-type', q.get('type'));
+        if (/^(original|v2|v3)$/.test(q.get('type') || '')) d.setAttribute('data-type', q.get('type'));
       } catch (e) {}
       // v5 is light only: no night theme
       if (d.getAttribute('data-palette') === 'v5') d.setAttribute('data-theme', 'day');
@@ -133,7 +133,7 @@
             <img class="hero__logo hero__logo--light" src="img/logo/sylva-logo-horizontal-light.svg" width="1062" height="251" alt="">
             <span class="sr-only">Sylva Residences</span>
           </h1>
-          <p class="hero__tag">Elevated living, naturally connected.</p>
+          <p class="hero__tag">Elevated Living, Naturally Connected.</p>
           <ul class="hero__meta">
             <li><strong>15</strong> storeys</li>
             <li><strong>88</strong> residences</li>
@@ -416,7 +416,7 @@
     <div class="wrap footer__grid">
       <div class="footer__brand">
         <img class="footer__logo" src="img/logo/sylva-logo-stacked.svg" width="570" height="416" alt="Sylva">
-        <p class="footer__tag">Elevated living, naturally connected.</p>
+        <p class="footer__tag">Elevated Living, Naturally Connected.</p>
       </div>
       <div class="footer__col">
         <p class="eyebrow">Address</p>

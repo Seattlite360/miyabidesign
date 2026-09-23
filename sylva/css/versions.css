@@ -102,3 +102,6 @@ html[data-palette="v5"] {
   --frame-bg: #EFE4D2;
 }
 html[data-palette="v5"] .theme-toggle { display: none; }
+/* Elgoc exists here as Thin only: hairlines vanish at body-ish sizes, so the tagline steps up */
+html[data-type="v2"] .hero__tag { font-size: clamp(1.35rem, 1.1rem + .8vw, 1.85rem); line-height: 1.25; }
+html[data-type="v2"] .footer__tag { font-size: 1.3rem; }

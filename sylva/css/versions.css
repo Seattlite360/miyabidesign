@@ -60,21 +60,18 @@ html[data-palette="v4"][data-theme="night"] {
   --frame-bg: #1F1A15;
 }
 
-/* ---------- Type v2: Abril Fatface (display) + Elgoc (tagline, emphasis) ----------
-   The SYLVA wordmark keeps Ambroise: it is the identity lockup, not a heading.
-   Elgoc is upright only, so italic-style switches to normal (no faked slant). */
+/* ---------- Type v2 (default): Marcellus (display) + Elgoc (tagline) ----------
+   Headings, hero lines and captions are Marcellus from start to end: no mid-line font switches.
+   Elgoc is used only for whole tagline lines. It is upright only, so no faked slant.
+   The SYLVA logo is always the supplied artwork, never type. */
+@font-face { font-family: "Sylva Marcellus"; src: url("../fonts/display/marcellus-latin-400-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 html[data-type="v2"] {
-  --font-display: "Sylva Abril", "ambroise-francois-std", "Sylva Didone", "Didot", serif;
+  --font-display: "Sylva Marcellus", "Sylva Didone", serif;
   --font-italic: "Sylva Elgoc", "ambroise-std", "Sylva Didone", "Didot", serif;
   --italic-style: normal;
 }
-/* Abril is a fat face: the same sizes read much louder, so step the big lines down */
-html[data-type="v2"][data-display="abril"] .display-2 { font-size: clamp(2.3rem, 1.1rem + 4vw, 4.9rem); letter-spacing: -.01em; line-height: 1.04; }
-html[data-type="v2"][data-display="abril"] .display-3 { font-size: clamp(1.9rem, 1.1rem + 2.3vw, 3.2rem); letter-spacing: 0; }
-html[data-type="v2"][data-display="abril"] .hero__lede { font-size: clamp(2rem, 1.1rem + 2.8vw, 3.9rem); letter-spacing: -.005em; }
-html[data-type="v2"][data-display="abril"] .hero__cap { font-size: clamp(1.4rem, .95rem + 1.1vw, 2.05rem); letter-spacing: 0; line-height: 1.18; }
-html[data-type="v2"][data-display="abril"] .display-2 em,
-html[data-type="v2"][data-display="abril"] .display-3 em { letter-spacing: 0; }
+html[data-type="v2"] .display-2 { letter-spacing: -.005em; }
+html[data-type="v2"] .hero__lede { letter-spacing: 0; }
 
 /* ---------- Palette v5 (default): creams, copper and forest greens, light only ----------
    v4 without the near-black: every dark role is a forest green instead of espresso,
@@ -105,30 +102,3 @@ html[data-palette="v5"] .theme-toggle { display: none; }
 /* Elgoc exists here as Thin only: hairlines vanish at body-ish sizes, so the tagline steps up */
 html[data-type="v2"] .hero__tag { font-size: clamp(1.35rem, 1.1rem + .8vw, 1.85rem); line-height: 1.25; }
 html[data-type="v2"] .footer__tag { font-size: 1.3rem; }
-
-/* ---------- Display font trial (replacing Abril) ----------
-   ?display=abril | aktiv | gloock | young | marcellus | tenor | newsreader | schibsted
-   Only the display role changes; logo, Lexend Exa body and Elgoc stay locked.
-   Aktiv Grotesk comes from Adobe Fonts kit lnv7que (loaded only when picked). */
-@font-face { font-family: "Sylva Gloock"; src: url("../fonts/display/gloock-latin-400-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Sylva Young"; src: url("../fonts/display/young-serif-latin-400-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Sylva Marcellus"; src: url("../fonts/display/marcellus-latin-400-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Sylva Tenor"; src: url("../fonts/display/tenor-sans-latin-400-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Sylva Newsreader"; src: url("../fonts/display/newsreader-latin-500-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Sylva Schibsted"; src: url("../fonts/display/schibsted-grotesk-latin-500-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-
-html[data-type="v2"][data-display="gloock"]     { --font-display: "Sylva Gloock", "Sylva Didone", serif; }
-html[data-type="v2"][data-display="young"]      { --font-display: "Sylva Young", "Sylva Didone", serif; }
-html[data-type="v2"][data-display="marcellus"]  { --font-display: "Sylva Marcellus", "Sylva Didone", serif; }
-html[data-type="v2"][data-display="tenor"]      { --font-display: "Sylva Tenor", "Lexend Exa", sans-serif; }
-html[data-type="v2"][data-display="newsreader"] { --font-display: "Sylva Newsreader", "Sylva Didone", serif; }
-html[data-type="v2"][data-display="schibsted"]  { --font-display: "Sylva Schibsted", "Lexend Exa", sans-serif; }
-html[data-type="v2"][data-display="aktiv"]      { --font-display: "aktiv-grotesk", "Sylva Schibsted", "Lexend Exa", sans-serif; }
-
-/* Aktiv ships every weight, so ask for Medium where the page asks for 300 */
-html[data-display="aktiv"] :is(.display-2, .display-3, .hero__lede, .hero__cap, .facts dd, .living__row h3, .stop h3,
-  .builder__projects span, .hero__meta strong, .slider__count, .form.is-done .form__status) { font-weight: 500; }
-
-/* Grotesks set tighter; the sans options want slightly smaller display sizes than the serif scale */
-html[data-type="v2"]:is([data-display="aktiv"], [data-display="schibsted"]) :is(.display-2, .display-3, .hero__lede, .hero__cap) { letter-spacing: -.025em; }
-html[data-type="v2"]:is([data-display="aktiv"], [data-display="schibsted"], [data-display="tenor"]) .display-2 { font-size: clamp(2.3rem, 1.1rem + 4.1vw, 5rem); line-height: 1.04; }

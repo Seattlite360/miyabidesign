@@ -31,7 +31,7 @@ Two switches on `<html>` in `index.html`, overrides in `css/versions.css`:
 | Switch | Values | Default |
 |---|---|---|
 | `data-palette` | `v5` creams, Copper, forest greens, light only; `v4` Stone / Copper / Sage / Umber with dark mode; `v3` Paper / Canopy / Aqua (original) | `v5` |
-| `data-type` | `v2` Abril Fatface display + Elgoc tagline, `original` Ambroise | `v2` |
+| `data-type` | `v2` Marcellus display + Elgoc tagline, `original` Ambroise | `v2` |
 
 Compare without editing anything: `?palette=v4`, `?palette=v3`, `?type=original`, or combine them. To go back for good,
 set the attributes on `<html>` to `v3` / `original`. The first build is commit `60b8aa2`.
@@ -43,12 +43,7 @@ Elgoc is free for personal use only: buy the commercial licence before client or
 from a local install first, then from `fonts/elgoc/` (see the README there). Font files in that folder are
 git-ignored on purpose: this repo is public and the licence does not allow redistribution.
 
-### Display font trial (replacing Abril)
-
-`?display=abril` (current default), `aktiv`, `gloock`, `young`, `marcellus`, `tenor`, `newsreader`, `schibsted`.
-Only the heading/caption face changes; logo, Lexend Exa and Elgoc stay locked. Aktiv Grotesk loads from
-Adobe Fonts kit `lnv7que` (localhost allowed); the rest are self-hosted from `fonts/display/` (SIL OFL).
-Once one is picked, set it as the default `data-display` on `<html>` and delete the unused font files.
+Every line is set in one typeface from start to end: no emphasis words switch font mid-line.
 
 ## Fonts
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-AU" data-theme="day" data-palette="v5" data-type="v2" data-display="abril">
+<html lang="en-AU" data-theme="day" data-palette="v5" data-type="v2">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -12,7 +12,7 @@
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
   <link rel="preload" href="fonts/lexend-exa-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/abril-fatface-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/display/marcellus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="img/stage-01-site.webp" as="image" type="image/webp" media="(min-width: 861px)">
   <link rel="preload" href="media/hero-poster-m.webp" as="image" type="image/webp" media="(max-width: 860px)">
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
@@ -35,13 +35,6 @@
         var q = new URLSearchParams(location.search);
         if (/^(v3|v4|v5)$/.test(q.get('palette') || '')) d.setAttribute('data-palette', q.get('palette'));
         if (/^(original|v2)$/.test(q.get('type') || '')) d.setAttribute('data-type', q.get('type'));
-        var disp = q.get('display') || '';
-        if (/^(abril|aktiv|gloock|young|marcellus|tenor|newsreader|schibsted)$/.test(disp)) d.setAttribute('data-display', disp);
-        if (d.getAttribute('data-display') === 'aktiv') {
-          // Adobe Fonts kit "Sylva Display Options" (lnv7que): Aktiv Grotesk
-          var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://use.typekit.net/lnv7que.css';
-          document.head.appendChild(l);
-        }
       } catch (e) {}
       // v5 is light only: no night theme
       if (d.getAttribute('data-palette') === 'v5') d.setAttribute('data-theme', 'day');
@@ -129,9 +122,9 @@
         </div>
 
         <div class="hero__caps">
-          <p class="hero__cap" data-sc-cue="0.10 0.34"><span class="hero__cap-k">The site</span>1,760 square metres on the corner of Sylvan Road and Landsborough Terrace.</p>
-          <p class="hero__cap" data-sc-cue="0.30 0.66"><span class="hero__cap-k">The structure</span>Fifteen storeys, rising behind the heritage-listed Regatta Hotel.</p>
-          <p class="hero__cap" data-sc-cue="0.62 0.86"><span class="hero__cap-k">The residence</span>Eighty-eight homes above the river.</p>
+          <p class="hero__cap" data-sc-cue="0.10 0.34">The site. 1,760 square metres on the corner of Sylvan Road and Landsborough Terrace.</p>
+          <p class="hero__cap" data-sc-cue="0.30 0.66">The structure. Fifteen storeys, rising behind the heritage-listed Regatta Hotel.</p>
+          <p class="hero__cap" data-sc-cue="0.62 0.86">The residence. Eighty-eight homes above the river.</p>
         </div>
 
         <div class="hero__title" data-sc-cue="0.82 1 0.3 0">
@@ -154,7 +147,7 @@
     <!-- ============ 01 THE RESIDENCE ============ -->
     <section class="intro section" id="residence" aria-labelledby="intro-title">
       <div class="wrap">
-        <h2 class="display-2 intro__title" id="intro-title" data-reveal="h">Fifteen storeys, shaped by the <em>river</em> and the <em>canopy.</em></h2>
+        <h2 class="display-2 intro__title" id="intro-title" data-reveal="h">Fifteen storeys, shaped by the river and the canopy.</h2>
         <div class="intro__grid">
           <div class="intro__copy">
             <p data-reveal="p">BDA Architecture has designed a tower of 88 homes on the corner of Sylvan Road and Landsborough Terrace, behind the Regatta Hotel. Its shape comes from the Brisbane River and from the shade the trees cast along its banks.</p>
@@ -186,7 +179,7 @@
           <figcaption><span class="ai-tag ai-tag--inline">AI-generated visualisation</span> Podium screen and planting, concept only.</figcaption>
         </figure>
         <div class="arch__copy">
-          <h2 class="display-2" id="arch-title" data-reveal="h">Shade, drawn from the <em>trees.</em></h2>
+          <h2 class="display-2" id="arch-title" data-reveal="h">Shade, drawn from the trees.</h2>
           <p data-reveal="p">The river is to the east of the site, and trees shade the streets around it.</p>
           <p data-reveal="p">In this concept visualisation, the podium brings that shade down to the street as a screen of terracotta fins with planting between them. Higher up, the balconies open to the river.</p>
           <svg class="motif motif--fins" viewBox="0 0 240 120" aria-hidden="true" data-motif="fins">
@@ -200,7 +193,7 @@
     <section class="living section" id="living" aria-labelledby="living-title">
       <div class="wrap">
         <div class="living__head">
-          <h2 class="display-2" id="living-title" data-reveal="h">From the street to the <em>rooftop.</em></h2>
+          <h2 class="display-2" id="living-title" data-reveal="h">From the street to the rooftop.</h2>
         </div>
         <div class="living__rows">
           <article class="living__row" data-reveal="ctn">
@@ -289,7 +282,7 @@
       <div class="location__pin" data-location-pin>
         <div class="location__track" data-location-track>
           <div class="location__intro">
-            <h2 class="display-2" id="loc-title">Between the <em>river</em> and the rail.</h2>
+            <h2 class="display-2" id="loc-title">Between the river and the rail.</h2>
             <p>Ferry, train and bus stops are all close by, and the city is a short trip east.</p>
           </div>
           <ol class="location__stops">
@@ -345,7 +338,7 @@
     <section class="builder section surface-canopy" id="builder" aria-labelledby="builder-title">
       <div class="wrap builder__grid">
         <div class="builder__copy">
-          <h2 class="display-2" id="builder-title" data-reveal="h">Planned and built by the <em>same hands.</em></h2>
+          <h2 class="display-2" id="builder-title" data-reveal="h">Planned and built by the same hands.</h2>
           <p data-reveal="p">Immerse Projects is a privately owned residential developer founded by John Kearney, a builder raised on the Gold Coast in a family of property developers. Its construction arm, Greyburn Building Contractors, builds what Immerse plans, so the same company runs a project from design to handover.</p>
           <p data-reveal="p">22-24 Sylvan Road is the company's first Brisbane development. Its earlier projects are in south-east Queensland and northern New South Wales.</p>
           <ul class="builder__projects" data-reveal="ctn">
@@ -374,7 +367,7 @@
       </svg>
       <div class="wrap register__grid">
         <div class="register__copy">
-          <h2 class="display-2" id="register-title" data-reveal="h">Be first through the <em>door.</em></h2>
+          <h2 class="display-2" id="register-title" data-reveal="h">Be first through the door.</h2>
           <p data-reveal="p">Register to get floor plans, pricing and release dates when they are published. Registered buyers hear first.</p>
         </div>
         <form class="form" data-form novalidate data-endpoint="">

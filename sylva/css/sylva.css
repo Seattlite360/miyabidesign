@@ -19,13 +19,8 @@
   font-weight: 500; font-style: normal; font-display: swap;
 }
 /* Didone stand-in while the Adobe Fonts kit loads, or if it is blocked */
-/* Type version v2 (default): Abril Fatface for display, Elgoc for the tagline/emphasis.
+/* Type version v2 (default) lives in versions.css: Marcellus display, Elgoc tagline.
    Elgoc is picked up from a local install first, then from fonts/elgoc/ (see its README). */
-@font-face {
-  font-family: "Sylva Abril";
-  src: url("../fonts/abril-fatface-latin-400-normal.woff2") format("woff2");
-  font-weight: 100 900; font-style: normal; font-display: swap;
-}
 @font-face {
   font-family: "Sylva Elgoc";
   src: local("Elgoc"), local("Elgoc Std"), local("Elgoc Std Regular"), local("Elgoc-Regular"), local("ElgocStd-Regular"),
@@ -146,7 +141,7 @@ a { color: var(--link); text-underline-offset: .2em; text-decoration-thickness: 
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
 p { margin: 0 0 1.1em; }
 h1, h2, h3 { margin: 0; font-weight: 300; }
-em { font-family: var(--font-italic); font-style: var(--italic-style); font-weight: 300; }
+em { font-style: inherit; font-family: inherit; font-weight: inherit; }
 ul, ol { list-style: none; margin: 0; padding: 0; }
 
 :focus { outline: none; }
@@ -202,7 +197,6 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   line-height: 1.05;
   letter-spacing: -.01em;
 }
-.display-2 em, .display-3 em { letter-spacing: -.02em; }
 
 /* ---------- Identity mark ---------- */
 /* The mark is a <use> clone: CSS selectors cannot reach inside it, but custom properties inherit in */
@@ -461,7 +455,7 @@ html.lenis-smooth { scroll-behavior: auto !important; }
 .hero__logo--light { display: none; }
 .hero__tag { font-family: var(--font-italic); font-style: var(--italic-style); font-size: clamp(1.15rem, 1rem + .5vw, 1.5rem); line-height: 1.3; margin-bottom: 1.6rem; color: var(--text-soft); }
 .hero__meta { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-bottom: 2rem; font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 400; color: var(--text-soft); }
-.hero__meta strong { font-family: var(--font-display); font-weight: 300; font-size: 1.5rem; letter-spacing: 0; text-transform: none; color: var(--text); margin-right: .35em; }
+.hero__meta strong { font-family: inherit; font-weight: 500; font-size: 1rem; letter-spacing: 0; text-transform: none; color: var(--text); margin-right: .35em; }
 
 /* Reduced motion: no clip is fetched, the panorama layer is skipped, and the
    poster swaps stage by stage (opacity-only) as the captions change. */
@@ -485,7 +479,7 @@ html.lenis-smooth { scroll-behavior: auto !important; }
 .facts div:nth-child(even) { padding-left: 28px; }
 .facts dt { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 400; color: var(--text-soft); margin-bottom: 10px; }
 .facts dd { margin: 0; font-family: var(--font-display); font-size: clamp(2.2rem, 1.4rem + 2.4vw, 3.8rem); line-height: 1; letter-spacing: -.01em; }
-.facts small { font-family: var(--font-body); font-size: .7rem; letter-spacing: .12em; margin-left: .4em; color: var(--text-soft); }
+.facts small { font-family: inherit; font-size: .7rem; letter-spacing: .12em; margin-left: .4em; color: var(--text-soft); }
 .status { display: flex; align-items: center; gap: 12px; margin: clamp(40px, 5vw, 72px) 0 0; font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 400; color: var(--text-soft); }
 .status__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
 
@@ -584,7 +578,7 @@ figcaption { margin-top: 14px; font-size: .7rem; color: var(--text-soft); letter
 .builder__copy p { color: var(--text-soft); max-width: 46ch; }
 .builder__projects { margin-top: 2.6rem; border-top: 1px solid var(--line); max-width: 480px; }
 .builder__projects li { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 400; color: var(--text-soft); }
-.builder__projects span { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0; text-transform: none; color: var(--text); margin-right: .5em; }
+.builder__projects span { color: var(--text); margin-right: .5em; }
 .builder__media { max-width: 560px; justify-self: end; width: 100%; }
 .builder__media .ai-tag--inline { color: var(--text-soft); }
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-AU" data-theme="day" data-palette="v5" data-type="v2">
+<html lang="en-AU" data-theme="day" data-palette="v5" data-type="v2" data-display="abril">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -35,6 +35,13 @@
         var q = new URLSearchParams(location.search);
         if (/^(v3|v4|v5)$/.test(q.get('palette') || '')) d.setAttribute('data-palette', q.get('palette'));
         if (/^(original|v2)$/.test(q.get('type') || '')) d.setAttribute('data-type', q.get('type'));
+        var disp = q.get('display') || '';
+        if (/^(abril|aktiv|gloock|young|marcellus|tenor|newsreader|schibsted)$/.test(disp)) d.setAttribute('data-display', disp);
+        if (d.getAttribute('data-display') === 'aktiv') {
+          // Adobe Fonts kit "Sylva Display Options" (lnv7que): Aktiv Grotesk
+          var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://use.typekit.net/lnv7que.css';
+          document.head.appendChild(l);
+        }
       } catch (e) {}
       // v5 is light only: no night theme
       if (d.getAttribute('data-palette') === 'v5') d.setAttribute('data-theme', 'day');

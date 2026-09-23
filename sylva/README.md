@@ -43,6 +43,13 @@ Elgoc is free for personal use only: buy the commercial licence before client or
 from a local install first, then from `fonts/elgoc/` (see the README there). Font files in that folder are
 git-ignored on purpose: this repo is public and the licence does not allow redistribution.
 
+### Display font trial (replacing Abril)
+
+`?display=abril` (current default), `aktiv`, `gloock`, `young`, `marcellus`, `tenor`, `newsreader`, `schibsted`.
+Only the heading/caption face changes; logo, Lexend Exa and Elgoc stay locked. Aktiv Grotesk loads from
+Adobe Fonts kit `lnv7que` (localhost allowed); the rest are self-hosted from `fonts/display/` (SIL OFL).
+Once one is picked, set it as the default `data-display` on `<html>` and delete the unused font files.
+
 ## Fonts
 
 - **Ambroise Std François** (headers) and **Ambroise Std** italics come from the Adobe Fonts kit

@@ -1,0 +1,3 @@
+builds/*/out/
+builds/*/lab/
+builds/*/node_modules

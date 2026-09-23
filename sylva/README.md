@@ -24,6 +24,22 @@ fetches it as a Blob, which browsers block on `file://`.
 | Day / night | A real theme switch: `data-theme` on `<html>` cascades the palette tokens. Photo swap is wired (`data-src-night`) but no night render exists yet. |
 | Reduced motion | No smooth scroll, no pins, no clip fetch. The hero poster swaps stage by stage as the captions change, and the location track becomes a native sideways scroll region. |
 
+## Design versions
+
+Two switches on `<html>` in `index.html`, overrides in `css/versions.css`:
+
+| Switch | Values | Default |
+|---|---|---|
+| `data-palette` | `v4` Stone / Copper / Sage / Umber, `v3` Paper / Canopy / Aqua (original) | `v4` |
+| `data-type` | `v2` Abril Fatface display + Elgoc tagline, `original` Ambroise | `v2` |
+
+Compare without editing anything: `?palette=v3`, `?type=original`, or both. To go back for good,
+set the attributes on `<html>` to `v3` / `original`. The first build is commit `60b8aa2`.
+
+In both type versions the SYLVA wordmark stays on Ambroise: it's the identity lockup, not a heading.
+Elgoc is free for personal use only: buy the commercial licence before client or public use. It loads
+from a local install first, then from `fonts/elgoc/` (see the README there).
+
 ## Fonts
 
 - **Ambroise Std François** (headers) and **Ambroise Std** italics come from the Adobe Fonts kit

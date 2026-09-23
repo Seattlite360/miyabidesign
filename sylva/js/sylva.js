@@ -473,7 +473,7 @@
       btn.setAttribute('aria-pressed', night ? 'true' : 'false');
       btn.setAttribute('aria-label', night ? 'Switch to day theme' : 'Switch to night theme');
       label.textContent = night ? 'Night' : 'Day';
-      if (meta) meta.setAttribute('content', night ? '#182018' : '#F8F8F6');
+      if (meta) meta.setAttribute('content', getComputedStyle(d).getPropertyValue('--bg').trim() || (night ? '#182018' : '#F8F8F6'));
       // Swap photography where a night render exists (data-src-night). None supplied yet.
       $$('[data-src-night]').forEach(function (img) {
         img.src = night ? img.getAttribute('data-src-night') : img.getAttribute('data-src-day');
@@ -529,7 +529,7 @@
       var ok = Object.keys(rules).map(check).every(Boolean);
       status.className = 'form__status';
       if (!ok) {
-        status.textContent = 'A few details need another look.';
+        status.textContent = 'Some fields need fixing.';
         status.classList.add('is-error');
         var bad = $('[aria-invalid="true"]', form);
         if (bad) bad.focus();

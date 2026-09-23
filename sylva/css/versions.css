@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Sylva: switchable design versions
+   Default is set on <html> (data-palette / data-type). Compare any time with
+   URL parameters, e.g.  ?palette=v3  ?type=original  ?palette=v3&type=original
+   v3 + original = the first build (commit 60b8aa2). Delete an override block to
+   drop that version for good.
+   ========================================================================== */
+
+/* ---------- Palette v4: Stone / Copper / Sage / Umber (light) ---------- */
+html[data-palette="v4"] {
+  --bg: #F7F0E4;          /* Stone 2 */
+  --bg-2: #EFE4D2;        /* Stone */
+  --line: #DCCEB2;        /* Rule */
+  --text: #211913;        /* Ink */
+  --text-soft: #5B4E42;   /* Ink Soft */
+  --accent: #8C5943;      /* Copper */
+  --link: #8C5943;
+  --cta-bg: #4F2A19;      /* Umber */
+  --cta-bg-hover: #211913;
+  --cta-text: #FBF7EF;    /* Card */
+  --focus: #8C5943;
+  --veil-rgb: 247, 240, 228;
+  --scrim-rgb: 33, 25, 19;
+  --datum: #C97F5C;       /* the lighter copper reads over photography */
+  --toggle-day: #8C5943;
+  --toggle-night: #5A5B40;
+  --toggle-night-dot: #9AA073;
+  --band-bg: #5A5B40;     /* Sage */
+  --band-text: #FBF7EF;
+  --band-soft: #DCCEB2;
+  --band-link: #EFE4D2;
+  --cap-key-on-photo: #C97F5C;
+  --frame-bg: #EFE4D2;
+}
+
+/* ---------- Palette v4: dark ---------- */
+html[data-palette="v4"][data-theme="night"] {
+  --bg: #191512;
+  --bg-2: #1F1A15;
+  --line: #3A2F24;
+  --text: #F0E6D8;
+  --text-soft: #C7B9A8;
+  --accent: #C97F5C;
+  --link: #C97F5C;
+  --cta-bg: #C97F5C;
+  --cta-bg-hover: #F0E6D8;
+  --cta-text: #191512;
+  --focus: #C97F5C;
+  --veil-rgb: 25, 21, 18;
+  --scrim-rgb: 25, 21, 18;
+  --datum: #C97F5C;
+  --toggle-day: #8C5943;
+  --toggle-night: #5A5B40;
+  --toggle-night-dot: #9AA073;
+  --band-bg: #211B15;     /* Card */
+  --band-text: #F0E6D8;
+  --band-soft: #C7B9A8;
+  --band-link: #9AA073;
+  --cap-key-on-photo: #C97F5C;
+  --frame-bg: #1F1A15;
+}
+
+/* ---------- Type v2: Abril Fatface (display) + Elgoc (tagline, emphasis) ----------
+   The SYLVA wordmark keeps Ambroise: it is the identity lockup, not a heading.
+   Elgoc is upright only, so italic-style switches to normal (no faked slant). */
+html[data-type="v2"] {
+  --font-display: "Sylva Abril", "ambroise-francois-std", "Sylva Didone", "Didot", serif;
+  --font-italic: "Sylva Elgoc", "ambroise-std", "Sylva Didone", "Didot", serif;
+  --italic-style: normal;
+}
+/* Abril is a fat face: the same sizes read much louder, so step the big lines down */
+html[data-type="v2"] .display-2 { font-size: clamp(2.3rem, 1.1rem + 4vw, 4.9rem); letter-spacing: -.01em; line-height: 1.04; }
+html[data-type="v2"] .display-3 { font-size: clamp(1.9rem, 1.1rem + 2.3vw, 3.2rem); letter-spacing: 0; }
+html[data-type="v2"] .hero__lede { font-size: clamp(2rem, 1.1rem + 2.8vw, 3.9rem); letter-spacing: -.005em; }
+html[data-type="v2"] .hero__cap { font-size: clamp(1.4rem, .95rem + 1.1vw, 2.05rem); letter-spacing: 0; line-height: 1.18; }
+html[data-type="v2"] .display-2 em,
+html[data-type="v2"] .display-3 em { letter-spacing: 0; }

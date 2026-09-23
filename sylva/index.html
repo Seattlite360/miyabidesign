@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-AU" data-theme="day">
+<html lang="en-AU" data-theme="day" data-palette="v4" data-type="v2">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -12,6 +12,7 @@
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
   <link rel="preload" href="fonts/lexend-exa-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/abril-fatface-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="img/stage-01-site.webp" as="image" type="image/webp" media="(min-width: 861px)">
   <link rel="preload" href="media/hero-poster-m.webp" as="image" type="image/webp" media="(max-width: 860px)">
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
@@ -20,6 +21,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/pzu1gsq.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="vendor/scrollcraft.css">
   <link rel="stylesheet" href="css/sylva.css">
+  <link rel="stylesheet" href="css/versions.css">
   <script>
     (function () {
       var d = document.documentElement;
@@ -27,6 +29,12 @@
       try {
         var t = localStorage.getItem('sylva-theme');
         if (t === 'night' || t === 'day') d.setAttribute('data-theme', t);
+      } catch (e) {}
+      // Design versions: ?palette=v3|v4 and ?type=original|v2 override the defaults above
+      try {
+        var q = new URLSearchParams(location.search);
+        if (/^(v3|v4)$/.test(q.get('palette') || '')) d.setAttribute('data-palette', q.get('palette'));
+        if (/^(original|v2)$/.test(q.get('type') || '')) d.setAttribute('data-type', q.get('type'));
       } catch (e) {}
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduced-motion');
     })();
@@ -141,7 +149,7 @@
         <div class="hero__caps">
           <p class="hero__cap" data-sc-cue="0.10 0.34"><span class="hero__cap-k">The site</span>1,760 square metres on the corner of Sylvan Road and Landsborough Terrace.</p>
           <p class="hero__cap" data-sc-cue="0.30 0.66"><span class="hero__cap-k">The structure</span>Fifteen storeys, rising behind the heritage-listed Regatta Hotel.</p>
-          <p class="hero__cap" data-sc-cue="0.62 0.86"><span class="hero__cap-k">The residence</span>Eighty-eight homes above the river, in terracotta and green.</p>
+          <p class="hero__cap" data-sc-cue="0.62 0.86"><span class="hero__cap-k">The residence</span>Eighty-eight homes above the river.</p>
         </div>
 
         <div class="hero__title" data-sc-cue="0.82 1 0.3 0">
@@ -167,8 +175,8 @@
         <h2 class="display-2 intro__title" id="intro-title" data-reveal="h">Fifteen storeys, shaped by the <em>river</em> and the <em>canopy.</em></h2>
         <div class="intro__grid">
           <div class="intro__copy">
-            <p data-reveal="p">On the corner of Sylvan Road and Landsborough Terrace, behind the Regatta Hotel, a sculpted tower of 88 homes takes its cues from what surrounds it: the slow movement of the Brisbane River, and the shade patterns of the tree canopies along its banks.</p>
-            <p data-reveal="p">Designed by BDA Architecture. One to three bedroom residences above an open ground floor of shops and hospitality, finished with a landscaped rooftop for everyone who lives here.</p>
+            <p data-reveal="p">BDA Architecture has designed a tower of 88 homes on the corner of Sylvan Road and Landsborough Terrace, behind the Regatta Hotel. Its shape comes from the Brisbane River and from the shade the trees cast along its banks.</p>
+            <p data-reveal="p">The homes have one to three bedrooms. Shops and hospitality take the ground floor, and residents share a landscaped rooftop.</p>
           </div>
           <dl class="facts" data-reveal="ctn">
             <div><dt>Storeys</dt><dd>15</dd></div>
@@ -197,8 +205,8 @@
         </figure>
         <div class="arch__copy">
           <h2 class="display-2" id="arch-title" data-reveal="h">Shade, drawn from the <em>trees.</em></h2>
-          <p data-reveal="p">BDA Architecture shaped the tower around two things you can see from the site: the movement of the river to the east, and the dappled shade of the tree canopies around it.</p>
-          <p data-reveal="p">In this concept visualisation, that idea reaches the street as a screen of terracotta fins with planting woven through, so the building meets Toowong softly at eye level and opens up to the river as it rises.</p>
+          <p data-reveal="p">The river is to the east of the site, and trees shade the streets around it.</p>
+          <p data-reveal="p">In this concept visualisation, the podium brings that shade down to the street as a screen of terracotta fins with planting between them. Higher up, the balconies open to the river.</p>
           <svg class="motif motif--fins" viewBox="0 0 240 120" aria-hidden="true" data-motif="fins">
             <path d="M12 120 V 40"/><path d="M38 120 V 22"/><path d="M64 120 V 54"/><path d="M90 120 V 12"/><path d="M116 120 V 36"/><path d="M142 120 V 6"/><path d="M168 120 V 44"/><path d="M194 120 V 26"/><path d="M220 120 V 60"/>
           </svg>
@@ -210,13 +218,13 @@
     <section class="living section" id="living" aria-labelledby="living-title">
       <div class="wrap">
         <div class="living__head">
-          <h2 class="display-2" id="living-title" data-reveal="h">Three levels of <em>life,</em> one address.</h2>
+          <h2 class="display-2" id="living-title" data-reveal="h">From the street to the <em>rooftop.</em></h2>
         </div>
         <div class="living__rows">
           <article class="living__row" data-reveal="ctn">
             <span class="living__num">i</span>
             <h3>The residences</h3>
-            <p>Eighty-eight homes, from one to three bedrooms, with deep balconies facing the river or the leafy west. Floor plans and pricing go to registered buyers first.</p>
+            <p>Eighty-eight homes with one to three bedrooms. Balconies face the river or the trees to the west. Registered buyers get floor plans and pricing first.</p>
             <div class="living__media media" data-parallax="img-in">
               <img src="img/detail-balconies.webp" width="850" height="420" loading="lazy" decoding="async"
                    alt="Stacked terracotta balconies with glass balustrades, the city skyline behind">
@@ -225,12 +233,12 @@
           <article class="living__row" data-reveal="ctn">
             <span class="living__num">ii</span>
             <h3>The rooftop</h3>
-            <p>A landscaped communal deck at the top of the tower, planned as shared space for residents to gather above Toowong, with the river and the city laid out below.</p>
+            <p>The top of the tower is a landscaped deck for residents, with the river and the city below.</p>
           </article>
           <article class="living__row" data-reveal="ctn">
             <span class="living__num">iii</span>
             <h3>The street</h3>
-            <p>Ground floor retail and hospitality open the corner to the neighbourhood, so the building gives something back to Sylvan Road instead of turning a blank wall to it.</p>
+            <p>Shops and hospitality on the ground floor keep the corner of Sylvan Road open to the neighbourhood.</p>
           </article>
         </div>
       </div>
@@ -266,7 +274,7 @@
             <li class="slider__slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
               <figure>
                 <div class="media"><img src="img/detail-structure.webp" width="1000" height="848" loading="lazy" decoding="async" alt="Upper levels under construction with formwork and a hoist"></div>
-                <figcaption><span>In construction</span> Upper levels rising, visualised.</figcaption>
+                <figcaption><span>In construction</span> The upper floors going up.</figcaption>
               </figure>
             </li>
             <li class="slider__slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
@@ -300,18 +308,18 @@
           <div class="location__intro">
             <p class="eyebrow">Toowong, Brisbane</p>
             <h2 class="display-2" id="loc-title">Between the <em>river</em> and the rail.</h2>
-            <p>Ferry, train and bus within reach, the city a short trip east, and the university close by.</p>
+            <p>Ferry, train and bus stops are all close by, and the city is a short trip east.</p>
           </div>
           <ol class="location__stops">
             <li class="stop">
               <span class="stop__tag">Next door</span>
               <h3>Regatta Hotel</h3>
-              <p>The heritage-listed riverside hotel, built in 1886, sits directly beside the site.</p>
+              <p>The heritage-listed riverside hotel, built in 1886, shares a boundary with the site.</p>
             </li>
             <li class="stop">
               <span class="stop__tag">East</span>
               <h3>The Brisbane River</h3>
-              <p>Eastern outlook across the river, with the city skyline on the bend beyond.</p>
+              <p>The site looks east across the river to the city.</p>
             </li>
             <li class="stop">
               <span class="stop__tag">By water</span>
@@ -326,7 +334,7 @@
             <li class="stop">
               <span class="stop__tag">Everyday</span>
               <h3>Toowong Village</h3>
-              <p>Supermarkets, dining and daily errands close at hand.</p>
+              <p>The local shopping centre, for groceries and everyday errands.</p>
             </li>
             <li class="stop">
               <span class="stop__tag">South</span>
@@ -336,7 +344,7 @@
             <li class="stop">
               <span class="stop__tag">West</span>
               <h3>Wests Rugby</h3>
-              <p>Western outlook over Sylvan Road and the Wests Rugby Union Club grounds.</p>
+              <p>To the west, the site looks over Sylvan Road to the Wests Rugby Union Club grounds.</p>
             </li>
             <li class="stop stop--end">
               <span class="stop__tag">Toowong</span>
@@ -357,8 +365,8 @@
         <div class="builder__copy">
           <p class="eyebrow" data-reveal="line">Developer and builder</p>
           <h2 class="display-2" id="builder-title" data-reveal="h">Planned and built by the <em>same hands.</em></h2>
-          <p data-reveal="p">Immerse Projects is a privately owned residential developer founded by John Kearney, a builder raised on the Gold Coast in a family of property developers. Its construction arm, Greyburn Building Contractors, builds what Immerse plans, so one team answers for the finished home.</p>
-          <p data-reveal="p">22-24 Sylvan Road is the company's first Brisbane development, following residential work across south-east Queensland and northern New South Wales.</p>
+          <p data-reveal="p">Immerse Projects is a privately owned residential developer founded by John Kearney, a builder raised on the Gold Coast in a family of property developers. Its construction arm, Greyburn Building Contractors, builds what Immerse plans, so the same company runs a project from design to handover.</p>
+          <p data-reveal="p">22-24 Sylvan Road is the company's first Brisbane development. Its earlier projects are in south-east Queensland and northern New South Wales.</p>
           <ul class="builder__projects" data-reveal="ctn">
             <li><span>Rhythm</span> Kirra Hill · Completed</li>
             <li><span>Ombré</span> Robina</li>
@@ -386,7 +394,7 @@
       <div class="wrap register__grid">
         <div class="register__copy">
           <h2 class="display-2" id="register-title" data-reveal="h">Be first through the <em>door.</em></h2>
-          <p data-reveal="p">Register for floor plans, pricing and release dates as they are published. Registered buyers hear before anyone else.</p>
+          <p data-reveal="p">Register to get floor plans, pricing and release dates when they are published. Registered buyers hear first.</p>
         </div>
         <form class="form" data-form novalidate data-endpoint="">
           <div class="field">
@@ -451,7 +459,7 @@
       </div>
     </div>
     <div class="wrap footer__legal">
-      <p>Concept presentation by Miyabi Design. "Sylva Residences" is a working name. This page is not affiliated with or endorsed by Immerse Projects or BDA Architecture. All images are AI-generated visualisations for discussion only and do not represent the final design, finishes or views. Project facts are drawn from public reporting on the development application and are subject to change.</p>
+      <p>Concept presentation by Miyabi Design. "Sylva Residences" is a working name. This page is not affiliated with or endorsed by Immerse Projects or BDA Architecture. All images are AI-generated visualisations for discussion only and do not represent the final design, finishes or views. Project facts come from public reporting on the development application and may change.</p>
       <p class="footer__credit">© 2026 Miyabi Design</p>
     </div>
   </footer>

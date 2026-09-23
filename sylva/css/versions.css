@@ -75,3 +75,30 @@ html[data-type="v2"] .hero__lede { font-size: clamp(2rem, 1.1rem + 2.8vw, 3.9rem
 html[data-type="v2"] .hero__cap { font-size: clamp(1.4rem, .95rem + 1.1vw, 2.05rem); letter-spacing: 0; line-height: 1.18; }
 html[data-type="v2"] .display-2 em,
 html[data-type="v2"] .display-3 em { letter-spacing: 0; }
+
+/* ---------- Palette v5 (default): creams, copper and forest greens, light only ----------
+   v4 without the near-black: every dark role is a forest green instead of espresso,
+   Copper stays the single accent, Sage carries the builder band. No night theme. */
+html[data-palette="v5"] {
+  --bg: #F7F0E4;          /* Stone 2 */
+  --bg-2: #EFE4D2;        /* Stone */
+  --line: #DCCEB2;        /* Rule */
+  --text: #2C3325;        /* Forest ink: the darkest tone on the page, and it is green */
+  --text-soft: #5A5B40;   /* Sage */
+  --accent: #8C5943;      /* Copper: rules, motif, graphic moments */
+  --link: #7A4B36;        /* Copper, one step deeper so small text clears 4.5:1 on Stone */
+  --cta-bg: #3E4A30;      /* Deep forest */
+  --cta-bg-hover: #2C3325;
+  --cta-text: #FBF7EF;    /* Card */
+  --focus: #3E4A30;
+  --veil-rgb: 247, 240, 228;
+  --scrim-rgb: 38, 46, 31;  /* forest, not black, under type on photography */
+  --datum: #C97F5C;
+  --band-bg: #5A5B40;     /* Sage */
+  --band-text: #FBF7EF;
+  --band-soft: #E3DAC4;
+  --band-link: #EFE4D2;
+  --cap-key-on-photo: #E0A383;
+  --frame-bg: #EFE4D2;
+}
+html[data-palette="v5"] .theme-toggle { display: none; }

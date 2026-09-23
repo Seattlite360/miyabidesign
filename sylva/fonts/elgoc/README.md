@@ -13,4 +13,7 @@ The page finds Elgoc in two ways, in this order:
 
    Use the regular upright style. To convert an .otf to .woff2, any webfont converter works.
 
+**Do not commit the file.** This repo is public, so the folder is git-ignored. Copy the file into
+whatever you deploy from (for example a Netlify drag-and-drop of the `sylva` folder) instead.
+
 Until a file is here, other devices fall back to Ambroise, or Bodoni Moda if the Adobe kit is blocked.

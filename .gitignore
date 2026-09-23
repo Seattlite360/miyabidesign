@@ -1,1 +1,7 @@
 .DS_Store
+
+# Licensed fonts: never publish to this public repo
+sylva/fonts/elgoc/*.otf
+sylva/fonts/elgoc/*.ttf
+sylva/fonts/elgoc/*.woff
+sylva/fonts/elgoc/*.woff2

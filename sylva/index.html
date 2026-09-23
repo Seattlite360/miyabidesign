@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-AU" data-theme="day" data-palette="v4" data-type="v2">
+<html lang="en-AU" data-theme="day" data-palette="v5" data-type="v2">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -33,9 +33,11 @@
       // Design versions: ?palette=v3|v4 and ?type=original|v2 override the defaults above
       try {
         var q = new URLSearchParams(location.search);
-        if (/^(v3|v4)$/.test(q.get('palette') || '')) d.setAttribute('data-palette', q.get('palette'));
+        if (/^(v3|v4|v5)$/.test(q.get('palette') || '')) d.setAttribute('data-palette', q.get('palette'));
         if (/^(original|v2)$/.test(q.get('type') || '')) d.setAttribute('data-type', q.get('type'));
       } catch (e) {}
+      // v5 is light only: no night theme
+      if (d.getAttribute('data-palette') === 'v5') d.setAttribute('data-theme', 'day');
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduced-motion');
     })();
   </script>
@@ -46,10 +48,7 @@
   <!-- Preloader: wordmark reveal tied to real image loading -->
   <div class="preloader" aria-hidden="true">
     <div class="preloader__inner">
-      <svg class="preloader__mark mark" viewBox="0 0 190 232" aria-hidden="true">
-        <use href="#sylva-mark"></use>
-      </svg>
-      <div class="preloader__word"><span>S</span><span>Y</span><span>L</span><span>V</span><span>A</span></div>
+      <img class="preloader__logo" src="img/logo/sylva-logo-stacked.svg" width="570" height="416" alt="">
       <div class="preloader__meta">
         <span class="preloader__label">Toowong, Brisbane</span>
         <span class="preloader__count"><span data-count>0</span>%</span>
@@ -58,33 +57,9 @@
     </div>
   </div>
 
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <defs>
-      <!-- Sylva mark, traced from the supplied identity artwork -->
-      <symbol id="sylva-mark" viewBox="0 0 190 232">
-        <g style="fill: var(--mark-side)">
-          <polygon points="10,54 52,8 52,22 10,62"/>
-          <polygon points="10,80 52,34.5 52,49 10,89"/>
-          <polygon points="10,104.5 52,59 52,72.5 10,112.5"/>
-        </g>
-        <g style="fill: var(--mark-face)">
-          <polygon points="52,8 179,68 179,82 52,22"/>
-          <polygon points="52,34.5 179,94.5 179,109 52,49"/>
-          <polygon points="52,59 179,117.5 179,132 52,72.5"/>
-          <path d="M52 87 L67.5 94 L67.5 135 C60 135 56 146 55.6 160 L55.6 180 L52 180 Z"/>
-          <path d="M82 101.25 L97.5 108 L97.5 145 C90 145 86 156 85.6 171 L85.6 192 L82 192 Z"/>
-          <path d="M109.25 114.25 L124.5 121.25 L124.5 157.5 C117 157.5 113 168.5 112.85 183 L112.85 202.5 L109.25 202.5 Z"/>
-          <path d="M136.25 127.5 L151.25 134.25 L151.25 170 C144 170 140 181 139.85 195 L139.85 213.75 L136.25 213.75 Z"/>
-          <path d="M163.75 140.5 L178.75 147.5 L178.75 182.5 C171.5 182.5 167.5 193.5 167.35 207 L167.35 223.75 L163.75 223.75 Z"/>
-        </g>
-      </symbol>
-    </defs>
-  </svg>
-
   <header class="nav" data-nav>
     <a class="nav__brand" href="#top" aria-label="Sylva Residences, back to top">
-      <svg class="nav__mark mark" viewBox="0 0 190 232" aria-hidden="true"><use href="#sylva-mark"></use></svg>
-      <span class="nav__word">SYLVA</span>
+      <img class="nav__logo" src="img/logo/sylva-logo-horizontal.svg" width="1062" height="251" alt="">
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="#residence">Residence</a>
@@ -142,8 +117,8 @@
         <div class="sc-scrim sc-scrim--band hero__band" aria-hidden="true"></div>
 
         <div class="hero__intro" data-sc-cue="0 0.07 0">
-          <p class="hero__address">22-24 Sylvan Road, Toowong</p>
           <p class="hero__lede">A new residence is rising beside the river.</p>
+          <p class="hero__address">22-24 Sylvan Road, Toowong</p>
         </div>
 
         <div class="hero__caps">
@@ -154,8 +129,8 @@
 
         <div class="hero__title" data-sc-cue="0.82 1 0.3 0">
           <h1 class="hero__word">
-            <span class="hero__word-main" aria-hidden="true">SYLVA</span>
-            <span class="hero__word-sub" aria-hidden="true">Residences</span>
+            <img class="hero__logo hero__logo--ink" src="img/logo/sylva-logo-horizontal.svg" width="1062" height="251" alt="">
+            <img class="hero__logo hero__logo--light" src="img/logo/sylva-logo-horizontal-light.svg" width="1062" height="251" alt="">
             <span class="sr-only">Sylva Residences</span>
           </h1>
           <p class="hero__tag">Elevated living, naturally connected.</p>
@@ -306,7 +281,6 @@
       <div class="location__pin" data-location-pin>
         <div class="location__track" data-location-track>
           <div class="location__intro">
-            <p class="eyebrow">Toowong, Brisbane</p>
             <h2 class="display-2" id="loc-title">Between the <em>river</em> and the rail.</h2>
             <p>Ferry, train and bus stops are all close by, and the city is a short trip east.</p>
           </div>
@@ -363,7 +337,6 @@
     <section class="builder section surface-canopy" id="builder" aria-labelledby="builder-title">
       <div class="wrap builder__grid">
         <div class="builder__copy">
-          <p class="eyebrow" data-reveal="line">Developer and builder</p>
           <h2 class="display-2" id="builder-title" data-reveal="h">Planned and built by the <em>same hands.</em></h2>
           <p data-reveal="p">Immerse Projects is a privately owned residential developer founded by John Kearney, a builder raised on the Gold Coast in a family of property developers. Its construction arm, Greyburn Building Contractors, builds what Immerse plans, so the same company runs a project from design to handover.</p>
           <p data-reveal="p">22-24 Sylvan Road is the company's first Brisbane development. Its earlier projects are in south-east Queensland and northern New South Wales.</p>
@@ -441,8 +414,7 @@
   <footer class="footer">
     <div class="wrap footer__grid">
       <div class="footer__brand">
-        <svg class="footer__mark mark" viewBox="0 0 190 232" aria-hidden="true"><use href="#sylva-mark"></use></svg>
-        <p class="footer__word">SYLVA</p>
+        <img class="footer__logo" src="img/logo/sylva-logo-stacked.svg" width="570" height="416" alt="Sylva">
         <p class="footer__tag">Elevated living, naturally connected.</p>
       </div>
       <div class="footer__col">

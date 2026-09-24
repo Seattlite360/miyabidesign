@@ -47,12 +47,19 @@ Every line is set in one typeface from start to end: no emphasis words switch fo
 
 ## Fonts
 
-- **Ambroise Std François** (headers) and **Ambroise Std** italics come from the Adobe Fonts kit
-  **`pzu1gsq`** ("Sylva Residences") on Kalebh's account. It is allowed on `localhost`,
-  `127.0.0.1`, `*.github.io`, `*.netlify.app`, `*.vercel.app` and `*.framer.app`. **Add the real
-  domain at fonts.adobe.com before hosting anywhere else**, or the headers fall back.
-- **Lexend Exa** (body) is self-hosted from `fonts/` (SIL OFL).
-- **Bodoni Moda** is self-hosted as the Didone stand-in while the kit loads, or if it is blocked.
+Final version (`data-type="v3"`): every font is SIL OFL and self-hosted from `fonts/`, so no licence
+and no Adobe kit is needed, and it renders the same on any device.
+
+- **Marcellus**: headings, hero lines, captions, numbers.
+- **Lexend Exa**: body.
+- **Inter**: the logo tagline only.
+- The older `original` / `v2` versions still reference the Adobe Fonts kit `pzu1gsq` (Ambroise) and
+  Elgoc (personal-use licence). They load only if you pick those versions.
+
+## John Kearney's portrait
+
+`img/john-kearney.jpg` is Immerse's own photo and is git-ignored, so it stays out of this public repo.
+Add it locally before deploying; without it the builder section falls back to a construction image.
 
 ## The register form
 

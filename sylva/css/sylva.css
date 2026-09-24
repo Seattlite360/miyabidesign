@@ -581,6 +581,8 @@ figcaption { margin-top: 14px; font-size: .7rem; color: var(--text-soft); letter
 .builder__projects span { color: var(--text); margin-right: .5em; }
 .builder__media { max-width: 560px; justify-self: end; width: 100%; }
 .builder__media .ai-tag--inline { color: var(--text-soft); }
+.builder__portrait img { object-position: 50% 22%; }
+.builder__media.is-fallback figcaption { display: none; }
 
 /* Register */
 .register { overflow: hidden; }

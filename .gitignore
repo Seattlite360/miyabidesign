@@ -5,3 +5,6 @@ sylva/fonts/elgoc/*.otf
 sylva/fonts/elgoc/*.ttf
 sylva/fonts/elgoc/*.woff
 sylva/fonts/elgoc/*.woff2
+
+# Third-party photo (Immerse Projects): deploy from the local folder, never publish in this repo
+sylva/img/john-kearney.jpg

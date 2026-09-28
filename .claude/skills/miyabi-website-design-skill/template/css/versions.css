@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Switchable design versions. Defaults live on <html>: data-palette / data-type.
+   Compare any time with URL parameters: ?palette=b  ?type=b  (the head script in
+   index.html whitelists the names). Keep every version the client has seen, so
+   "go back to the old colours" is one attribute, not a rebuild.
+   ========================================================================== */
+
+/* ---------- Palette a: creams, copper, forest greens. Light only ----------
+   The first build's final palette, kept as the starting point. Replace every hex from the
+   client's references: sample real pixels, then check contrast (4.5:1 body). */
+html[data-palette="a"] {
+  --bg: #F7F0E4;          /* cream */
+  --bg-2: #EFE4D2;        /* stone */
+  --line: #DCCEB2;        /* rule */
+  --text: #2C3325;        /* forest ink: the darkest tone, and it is green, not black */
+  --text-soft: #5A5B40;   /* sage */
+  --accent: #8C5943;      /* copper: rules, motifs, graphic moments */
+  --link: #7A4B36;        /* copper, one step deeper so small text clears 4.5:1 */
+  --cta-bg: #3E4A30;      /* deep forest */
+  --cta-bg-hover: #2C3325;
+  --cta-text: #FBF7EF;
+  --focus: #3E4A30;
+  --veil-rgb: 247, 240, 228;
+  --scrim-rgb: 38, 46, 31;  /* tinted scrim under type on photos, never pure black */
+  --datum: #C97F5C;
+  --band-bg: #5A5B40;
+  --band-text: #FBF7EF;
+  --band-soft: #E3DAC4;
+  --band-link: #EFE4D2;
+  --cap-key-on-photo: #E0A383;
+  --frame-bg: #EFE4D2;
+}
+/* Light-only palette: hide the day/night toggle (index.html also forces day) */
+html[data-palette="a"] .theme-toggle { display: none; }
+
+/* ---------- Palette b: add the next option here, same token names ---------- */
+
+/* ---------- Type a: Marcellus (display) + Lexend Exa (body) + Inter (tagline) ----------
+   All SIL OFL and self-hosted: no licence, no kit, same on every device.
+   One typeface per line from start to end: no emphasis words in another face. */
+@font-face { font-family: "Site Marcellus"; src: url("../fonts/display/marcellus-latin-400-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Site Inter"; src: url("../fonts/inter-latin-400-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+html[data-type="a"] {
+  --font-display: "Site Marcellus", "Site Didone", serif;
+  --font-italic: "Site Marcellus", "Site Didone", serif;
+  --italic-style: normal;
+}
+html[data-type="a"] .display-2 { letter-spacing: -.005em; }
+html[data-type="a"] .hero__lede { letter-spacing: 0; }
+/* The logo's tagline: small, widely tracked, like the tagline in the artwork */
+html[data-type="a"] :is(.hero__tag, .footer__tag) {
+  font-family: "Site Inter", "Lexend Exa", sans-serif; font-style: normal; font-weight: 400;
+  font-size: clamp(.66rem, .62rem + .14vw, .76rem); letter-spacing: .34em; line-height: 1.7;
+}
+
+/* ---------- Type b: add the next pairing here ---------- */

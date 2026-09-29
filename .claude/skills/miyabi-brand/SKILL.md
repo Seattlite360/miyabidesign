@@ -76,7 +76,7 @@ Subject lines: specific and factual, ideally with a real number from the reader'
 - Write any property detail not stated on the source.
 - Use listing volume in tier language. Tiers are by agent count only.
 - Add bilingual copy to AU agency/developer pages (English-only by decision). Use bilingual for JP-market material.
-- Send more than more than about 120 words in a cold email.
+- Send more than about 120 words in a cold email.
 
 ## Pre-send check
 

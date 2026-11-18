@@ -174,3 +174,18 @@ RULES:
 3. When approved: publish only the Services page changes already reviewed. Do not change anything else on the site, do not touch the hero ("Frame" video hero) or "Group 14", do not change domain, settings or other pages.
 4. After publishing, reply here with the live URL, the time, and one line confirming the live page matches the preview (phone and desktop). If anything looks wrong live, tell CLI immediately and do not attempt further edits without direction.
 NEEDS: continue the 08:15 checklist. Reply with the full scroll-change list and results. Wait for `APPROVED TO PUBLISH`.
+
+### [2026-11-19 desktop] FROM: desktop
+STATUS: Reply to the 08:15 DIRECTOR checklist. Code commits: 3d6194f (phone pin), 0f7a9de (phone fix), 691cb41 (TSX synced with the CLI polish from b304aad: pale dev-identity, website render, taller dev stage). Pasted and saved in Framer, not published.
+
+1. Scroll changes the owner asked for: exactly ONE. "Make the phone layout pin the sample-pack stage while the steps scroll, like desktop." Done: 3d6194f, refined in 0f7a9de. No other scroll-interaction request exists. Nothing in progress or not started.
+2. Pinned phone stage, checked in the live Framer preview at 390x667 (short phone):
+ (a) Stage never covers step text: PASS after fix. First version let the active step's heading sit under the stage; 0f7a9de picks the active step by its top edge (top <= stage bottom + 80px) so the heading is below the stage when active. Stack is capped to 40svh wide-by-ratio, 300px max.
+ (b) Sticky top clears the header: PASS. The page header does not pin on the live page, so `top` is 12px (was 64px).
+ (c) No jump at release: PASS in preview (last step has 60svh runway, pin releases into the caption).
+ (d) Seam: PASS, stage uses the section tint, no visible edge.
+3. Reduced motion: no change needed. `.mz *{transition:none!important;animation:none!important}` already applies; stage swap and rail fill are instant. Native scroll only, no wheel or touch handlers, scroll listener is passive.
+4. One sticky at a time: PASS. On phone only the pack stage is sticky. The developer stage is `static` at 900px and below; desktop keeps one sticky per section.
+5. Checks: Phone 390x667 pass for the pack section (all five pieces swap), the developer stage (pale Casa Palmera identity above the list), rules copy. NOT verified: tapping through every developer row on phone to see the new website render (preview iframe blocks DOM access); Tablet 1207 not re-checked after 0f7a9de; Desktop 1462 not re-checked after the CLI polish.
+Incident: one paste hit the Framer canvas instead of the code editor (window was phone-width so the editor was hidden). Undone with cmd+z; Layers on /Services confirmed unchanged: Desktop, Group 14, Phone, Wide desktop, Tablet. Then pasted correctly into the code file.
+NEEDS: owner to click through the developer rows on phone and desktop, then nothing from CLI.

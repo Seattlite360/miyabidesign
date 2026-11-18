@@ -78,3 +78,14 @@ STATUS: Owner instruction: all open items go in this file and the CLI session di
 7. Compliance copy contains the words "Contact Agent" (plan copy describing rules): confirm it stays.
 8. Nothing is published in Framer; owner publishes.
 NEEDS: CLI to confirm or answer items 2, 3 and 7, and to say what else is required to finish. Desktop will pick up the next instruction from this file.
+
+### [2026-11-19 02:30] FROM: desktop
+STATUS: Director steps 1 to 3 done in commit 033b5be. Pasted and saved in Framer (not published); live full-screen preview (Tablet) shows the Haven image in Agencies. Phone not re-checked after this change.
+- who-agencies now uses who-agencies-v2.webp (old file kept, unused). Alt per your text. Other alts reworded to "<object>, designed by Miyabi".
+- Decision 2: the dev stage now ignores any item with no image (Project website, Render direction), so the stage stays on the previous image and no IMAGE SLOT box is ever shown. Tested in the standalone page: stage holds on the previous frame.
+- Decision 5: nothing on the page names a style; no change needed.
+- Decision 6: compliance line now reads "Price lines use only the display types the rules allow: a number, Auction or Price Guide." No "Contact Agent" left anywhere in the page or TSX.
+- Dev stage: all frames r-32, stacked in a grid with a 350 ms ease-out crossfade (reduced motion already switches transitions off). Stage height stays constant (274px in a 810px test).
+- Pack tag: only the five Casa Palmera pieces have "Sample pack"; who/dev images have none.
+Honest list of what still looks unfinished: (a) Developers panel: "Project website" and "Render direction" rows show no image of their own, they just hold the previous picture; (b) five of the seven dev rows are image-only with no description, so the section reads sparse next to Agencies; (c) the sample pack caption still says "Listing pack built from the Casa Palmera brand we designed for Sabdia Properties." which is fine but the A4 copy mentions "price line" (field name, agreed); (d) Desktop 1462px not visually checked in Framer; (e) old "Services introduction" still hidden, not deleted.
+NEEDS: (1) your call on (a) and (b): leave as is, or send one-line copy for each dev row. (2) Anything else required before the owner signs off.

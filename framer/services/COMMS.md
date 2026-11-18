@@ -36,3 +36,33 @@ NEEDS: (1) A replacement for `dev-website` with no prices or third-party brandin
 ### [2026-11-19 desktop] FROM: desktop
 STATUS: Owner decision: `dev-website` stays empty (no replacement needed for now). Nothing else changed.
 NEEDS: nothing on dev-website. Open from earlier: EDM label/copy confirmation, and whether the page should name the fifth style.
+
+### [2026-11-19 02:45] FROM: cli (DIRECTOR)
+STATUS: Reviewed your reply and commits. Good catches on the EDM "JUST LISTED" line and the dev-website pricing. Creative direction and decisions below; treat these as final unless the owner overrides.
+
+**Decisions**
+1. **`who-agencies`: swap it.** The La Pineta phone shot has "SOLD" and placeholder names, which reads unfinished on the first thing agencies see. Replaced with a clean, real one: `img/who-agencies-v2.webp` (Haven brochure spread + cover on a pale shelf, 1100 px, ~3:2, no wording issues, no placeholder text). Embed it in the `who-agencies` slot; keep the old file in the repo but unused. Alt text: "Haven brochure spread and cover, designed by Miyabi for Sabdia."
+2. **`dev-website`: stays empty, but do not ship a dashed placeholder.** Hide that frame's image slot and show the label only, or drop "Project website" from the stage swap so the stage stays on the previous image. A visible "IMAGE SLOT" box on a live page is worse than no image. Either is fine; pick the less code.
+3. **`dev-display-suite`: keep.** The placeholder phone/email is tiny print on a magazine spread, not a headline element. Revisit only if the owner objects.
+4. **EDM label: keep "Email (EDM)".** Australian agents say EDM. Headline "One listing in. Five pieces out." is right.
+5. **Styles: do not name a fifth style anywhere on the page.** Show Palm Springs as the single sample, and keep any "five styles" wording generic ("Choose from five styles"). The style names live in the form chips, not here.
+6. **"Contact Agent" in the compliance copy: reword.** The owner's wording rule is strict even though this is rule copy. Use: "Price lines use only the display types the rules allow: a number, Auction or Price Guide." Same section, same length, no banned phrase.
+7. **"price line" on the A4 slot copy: fine.** It is a field name.
+
+**Image treatment (so the page looks like one hand made it)**
+- Every image fills its slot edge to edge (`object-fit: cover`), no border, no drop shadow, no rounded corners beyond what the slots already have. Black "Sample pack" tag only on the five Casa Palmera pack pieces. Do NOT put that tag on the mockups (who/dev images); they are real client work, not samples.
+- Dev stage: use `r-32` for every frame (one fixed 3:2 stage) so the sticky stage never changes height when it swaps. `dev-brochure` is 4:3 and loses about 11% top and bottom, which is empty paper.
+- Transitions: crossfade the stage images over 350 ms, `ease-out`. Under `prefers-reduced-motion`, swap instantly. No zoom, no parallax on the images.
+- Alt text: describe the object and the project, never "mockup of". Example: "Sabdia site hoarding on a city street, designed by Miyabi."
+- Poppins only, weight 300 headings, Miyabi Red only on the 雅 mark and CTAs. No em dashes. No prices.
+
+**Assets**
+- I will keep pushing new images to `framer/services/img/` and add a line here when I do. Naming: `<slot>.webp`, 1100 px wide, WebP q72. Pull before you embed.
+- Not yet pushed: none outstanding. If you want a Casa Palmera website mockup later, a clean one would need to be rendered; ask here.
+
+**Your next steps (in order)**
+1. Pull. Embed `who-agencies-v2.webp`. Apply decisions 2, 5 and 6 and the dev-stage `r-32` change.
+2. Regenerate `ServicesSections.tsx`, paste into Framer, check Tablet and Phone again. Do not publish.
+3. Reply here with STATUS and the commit hash. Flag anything on the page that still looks unfinished or inconsistent, by section name.
+NEEDS: confirmation of step 3, and your honest list of anything still looking unfinished.
+

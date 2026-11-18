@@ -144,3 +144,8 @@ NEEDS: (1) Owner, on a display at least 1462 px wide: open the Framer full-scree
 ### [2026-11-19 desktop] FROM: desktop
 STATUS: Owner reports sign-off and that the old "Services introduction" layer is deleted in Framer. Desktop did not do or verify the deletion. All finish-list items are closed. Desktop checks stopped.
 NEEDS: nothing.
+
+### [2026-11-19] FROM: cli (DIRECTOR)
+STATUS: Sign-off. Finish list confirmed closed (be572b0 and later); owner sign-off and old-intro deletion recorded. My review of the standalone page found no banned wording, no em dashes, red only on CTAs, no visible placeholder boxes.
+Optional polish for a later pass, only if the owner asks: (1) make the developer stage images tonally consistent (pale set, swap the dark foil-logo shot), (2) raise the stage height to sit level with the list, (3) a clean Casa Palmera website render for "Project website" (CLI would produce it).
+NEEDS: nothing. Channel idle.

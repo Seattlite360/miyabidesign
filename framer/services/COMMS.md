@@ -126,3 +126,13 @@ Keep the labels as they are. On mobile the sentence sits under the label with 4p
 4. Then stop. The owner does the 1462 check, publishes, and deletes the old intro section.
 NEEDS: step 3 reply. After that I have nothing further for you unless the owner reports something.
 
+
+### [2026-11-19 desktop] FROM: desktop
+STATUS: Director 04:05 finish list done. Commit be572b0 (code), pasted and saved in Framer, not published.
+1. Six sentences added with your exact copy, as always-visible `.muted` 16px weight 300 text under each label (4px gap). Render direction keeps its expander and sentence. HTML and TSX both updated.
+2. Phone 390 full-screen preview: pass for hero-to-pack, five pack pieces (Sample pack tag on each), developer rows with sentences, pricing tabs, final CTA. Tablet 1207: pass for Agencies tab, pack pieces, developer rows with sentences, stage image, pricing.
+3. No IMAGE SLOT boxes seen in either preview. TSX text search: no "For Sale", "Just Listed", "Contact Agent" or dollar figures.
+4. Not exercised by hand in the preview iframe (it blocks DOM access, so clicks are screenshot-driven only): developer stage image swap, FAQ expand, and the Developers tab. Verified only in the standalone page earlier. Owner should click through these in the 1462 check.
+5. One thing to flag: the "Your pack arrives" timeline uses a dashed vertical connector for the "Next" steps. That is the rail design, not a placeholder border. Say if you want it solid.
+6. Pricing section keeps plan copy without any figures ("Ask for pricing").
+NEEDS: nothing required. Remaining for owner: 1462 check, click-through of item 4, publish, delete old "Services introduction".

@@ -32,3 +32,7 @@ STATUS: Embedded images and pasted the new `ServicesSections.tsx` into Framer (s
 - `who-agencies` still shows "SOLD" and placeholder names (Adam_Johnson, lorem ipsum). Embedded as you flagged it; owner to decide. `dev-display-suite` also shows placeholder phone/email in tiny print.
 - The A4 flyer slot copy says "price line" (the field name, not a price).
 NEEDS: (1) A replacement for `dev-website` with no prices or third-party branding (re-crop is not allowed, so a different mockup or a clean render), or confirm it stays empty. (2) Any listing-intake items you want on the page for the EDM (is "Email (EDM)" the right label?). (3) Confirm Palm Springs is the only style shown, or send the fifth style name for the "five styles" line if the page should mention it.
+
+### [2026-11-19 desktop] FROM: desktop
+STATUS: Owner decision: `dev-website` stays empty (no replacement needed for now). Nothing else changed.
+NEEDS: nothing on dev-website. Open from earlier: EDM label/copy confirmation, and whether the page should name the fifth style.

@@ -140,3 +140,7 @@ NEEDS: nothing required. Remaining for owner: 1462 check, click-through of item 
 ### [2026-11-19 desktop] FROM: desktop
 STATUS: Owner asked for the wide-display check to be recorded here. Desktop and Wide breakpoints in the Framer preview are disabled below a 1462 px window width, so desktop cannot verify them from the laptop window. Nothing else changed.
 NEEDS: (1) Owner, on a display at least 1462 px wide: open the Framer full-screen preview of /Services at Desktop (1462) and Wide, and check the sticky stage in Developers, the Agencies tabs, the sample pack rail, the FAQ and the CTAs. (2) CLI: say what to do if a wide breakpoint fails, or whether any other item must be checked before sign-off.
+
+### [2026-11-19 desktop] FROM: desktop
+STATUS: Owner reports sign-off and that the old "Services introduction" layer is deleted in Framer. Desktop did not do or verify the deletion. All finish-list items are closed. Desktop checks stopped.
+NEEDS: nothing.

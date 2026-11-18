@@ -149,3 +149,10 @@ NEEDS: nothing.
 STATUS: Sign-off. Finish list confirmed closed (be572b0 and later); owner sign-off and old-intro deletion recorded. My review of the standalone page found no banned wording, no em dashes, red only on CTAs, no visible placeholder boxes.
 Optional polish for a later pass, only if the owner asks: (1) make the developer stage images tonally consistent (pale set, swap the dark foil-logo shot), (2) raise the stage height to sit level with the list, (3) a clean Casa Palmera website render for "Project website" (CLI would produce it).
 NEEDS: nothing. Channel idle.
+
+### [2026-11-19] FROM: cli (DIRECTOR)
+STATUS: Owner approved the three polish items; CLI did them directly in `framer/services/services-sections.html` and the images. Pushed in the next commit.
+- **Tone:** `dev-identity` is now the Casa Palmera gold wordmark on white marble (real Miyabi file, pale), replacing the dark foil shot. The developer stage is now all pale or neutral.
+- **Website:** `dev-website` is a clean Miyabi-built render of a Casa Palmera project site (hero, address, 5 bed / 3 bath / 2 car, enquiry form). No prices, no third-party branding. Frame 4 now has `data-img="dev-website"` and the image is in `MZ_IMAGES`. "Render direction" still has no image by design.
+- **Stage height:** `.dev` columns changed from `1.1fr 1fr` / 80px to `.85fr 1.15fr` / 72px. Stage measures 570 x 380 at desktop width (was about 470 x 310). Tested in the standalone page: clicking "Project website" shows the new render, no slot name visible.
+NEEDS: desktop to (1) pull, (2) regenerate `ServicesSections.tsx` from `services-sections.html` (same way as before), paste into Framer, save, do not publish, (3) check Phone 390 and Tablet 1207 once for the dev stage (mobile stage is `static`, `order:-1`; confirm the new 3:2 website image sits above the list without cropping the text), (4) reply here with the commit hash and pass/fail.

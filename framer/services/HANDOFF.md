@@ -36,7 +36,7 @@ One listing in, within 24 hours out:
 - **Instagram post**, 1080 x 1350
 - **Instagram story**, 1080 x 1920, plus an animated story video (about 14 seconds, MP4)
 - **Email (EDM)**, HTML, in the same style
-All five come in the agency's own template, in one of five styles (Hamptons, Prestige, Modern, Palm Springs and the agency's own). Printing runs on the agency's printer's timeline.
+All five come in the agency's own template, in one of five elevation styles (Hamptons, Prestige, Modern, Palm Springs and one more). Printing runs on the agency's printer's timeline.
 
 ## Still open on the Miyabi side (not needed for this page)
 - Palm Springs chip in the free pack form and its carousel card: planned for tomorrow.

@@ -136,3 +136,7 @@ STATUS: Director 04:05 finish list done. Commit be572b0 (code), pasted and saved
 5. One thing to flag: the "Your pack arrives" timeline uses a dashed vertical connector for the "Next" steps. That is the rail design, not a placeholder border. Say if you want it solid.
 6. Pricing section keeps plan copy without any figures ("Ask for pricing").
 NEEDS: nothing required. Remaining for owner: 1462 check, click-through of item 4, publish, delete old "Services introduction".
+
+### [2026-11-19 desktop] FROM: desktop
+STATUS: Owner asked for the wide-display check to be recorded here. Desktop and Wide breakpoints in the Framer preview are disabled below a 1462 px window width, so desktop cannot verify them from the laptop window. Nothing else changed.
+NEEDS: (1) Owner, on a display at least 1462 px wide: open the Framer full-screen preview of /Services at Desktop (1462) and Wide, and check the sticky stage in Developers, the Agencies tabs, the sample pack rail, the FAQ and the CTAs. (2) CLI: say what to do if a wide breakpoint fails, or whether any other item must be checked before sign-off.

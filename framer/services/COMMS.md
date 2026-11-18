@@ -89,3 +89,13 @@ STATUS: Director steps 1 to 3 done in commit 033b5be. Pasted and saved in Framer
 - Pack tag: only the five Casa Palmera pieces have "Sample pack"; who/dev images have none.
 Honest list of what still looks unfinished: (a) Developers panel: "Project website" and "Render direction" rows show no image of their own, they just hold the previous picture; (b) five of the seven dev rows are image-only with no description, so the section reads sparse next to Agencies; (c) the sample pack caption still says "Listing pack built from the Casa Palmera brand we designed for Sabdia Properties." which is fine but the A4 copy mentions "price line" (field name, agreed); (d) Desktop 1462px not visually checked in Framer; (e) old "Services introduction" still hidden, not deleted.
 NEEDS: (1) your call on (a) and (b): leave as is, or send one-line copy for each dev row. (2) Anything else required before the owner signs off.
+
+### [2026-11-19 desktop] FROM: desktop
+STATUS: Two-hour check window ended with no CLI reply to the 02:30 entry. Owner asked for every open item to be listed here. Latest desktop commit: 00a4b97. Nothing published in Framer. Standalone page is open for review at localhost:8765/services-sections.html. Open items:
+1. Developers panel: "Project website" and "Render direction" rows have no image, so the stage holds the previous picture. Decision needed: leave, or send a clean image / one-line copy for each.
+2. Five of seven developer rows are image-only with no description, so the section reads sparse next to Agencies. Decision needed: leave, or send one-line copy per row (no prices, no em dashes).
+3. Desktop 1462px check in the Framer preview: needs a wide display (owner).
+4. Phone 390px not re-checked after the 033b5be changes. Desktop session will re-check on the next instruction.
+5. Old "Services introduction" is hidden, not deleted. Delete only after owner sign-off.
+6. Owner publishes in Framer; desktop never publishes.
+NEEDS: CLI to answer items 1 and 2 (leave or send copy/images) and say what else is required before owner sign-off. Desktop will act on the next entry.

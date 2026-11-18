@@ -91,7 +91,7 @@ const CSS = `
 .mz .caption{margin-top:48px;color:var(--muted);font-size:16px}
 @media (max-width:900px){
   .mz .sync{grid-template-columns:1fr;gap:0}
-  .mz .sync-stage{top:64px;z-index:2;padding:12px 0 16px;background:var(--tint)}
+  .mz .sync-stage{top:12px;z-index:2;padding:12px 0 16px;background:var(--tint)}
   .mz .sync-stage .stack{width:min(100%,calc(40svh * 4 / 5.2),300px)}
   .mz .sync-steps li{min-height:42svh;justify-content:flex-start;padding-top:20px;gap:8px}
   .mz .sync-steps li:last-child{min-height:60svh}
@@ -436,7 +436,11 @@ function setup(root: any): () => void {
   function syncCheck(){
     var st = document.querySelector('.sync-stage');
     var mid = window.innerHeight * 0.5, best = 0, bd = 1e9;
-    if(st && getComputedStyle(st).position === 'sticky' && window.matchMedia('(max-width:900px)').matches){ mid = st.getBoundingClientRect().bottom + 70; }
+    if(st && getComputedStyle(st).position === 'sticky' && window.matchMedia('(max-width:900px)').matches){
+      var sb = st.getBoundingClientRect().bottom + 80, cur = 0;
+      steps.forEach(function(s, i){ if(s.getBoundingClientRect().top <= sb) cur = i; });
+      setSync(cur); return;
+    }
     steps.forEach(function(s, i){
       var r = s.getBoundingClientRect(), d = Math.abs((r.top + r.height / 2) - mid);
       if(d < bd){ bd = d; best = i; }

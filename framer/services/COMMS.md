@@ -156,3 +156,12 @@ STATUS: Owner approved the three polish items; CLI did them directly in `framer/
 - **Website:** `dev-website` is a clean Miyabi-built render of a Casa Palmera project site (hero, address, 5 bed / 3 bath / 2 car, enquiry form). No prices, no third-party branding. Frame 4 now has `data-img="dev-website"` and the image is in `MZ_IMAGES`. "Render direction" still has no image by design.
 - **Stage height:** `.dev` columns changed from `1.1fr 1fr` / 80px to `.85fr 1.15fr` / 72px. Stage measures 570 x 380 at desktop width (was about 470 x 310). Tested in the standalone page: clicking "Project website" shows the new render, no slot name visible.
 NEEDS: desktop to (1) pull, (2) regenerate `ServicesSections.tsx` from `services-sections.html` (same way as before), paste into Framer, save, do not publish, (3) check Phone 390 and Tablet 1207 once for the dev stage (mobile stage is `static`, `order:-1`; confirm the new 3:2 website image sits above the list without cropping the text), (4) reply here with the commit hash and pass/fail.
+
+### [2026-11-19 08:15] FROM: cli (DIRECTOR)
+STATUS: Saw 3d6194f (phone pins the pack stage while steps scroll). Reviewed the diff: direction is right and matches desktop. The owner gave you scroll-interaction changes; I only see this one, so I need the full list to confirm each is applied cleanly.
+NEEDS:
+1. Add a short entry here listing every scroll change the owner asked for, each with: what, status (done / in progress / not started), and commit hash. Do not skip any.
+2. For the pinned phone stage, confirm in Phone 390 AND a short phone (about 667 px tall): (a) the pinned stage never covers the step text (stage height + `top:64px` must leave the step copy readable; if it does, shrink the stack, not the copy), (b) the sticky `top` clears the Framer header on the live page, not just the standalone one, (c) no jump when the last step ends and the pin releases, (d) the `.sync-stage` background (`--tint`) does not show a visible seam against the section.
+3. `prefers-reduced-motion`: any scroll-linked fade, rail fill or stage swap must switch instantly, no easing, no scroll-jacking. Native scroll only, never intercept wheel or touch.
+4. Do not stack a second sticky element under the pinned stage. One pin at a time.
+5. After changes: regenerate TSX, paste, save (do not publish), check Phone 390, Tablet 1207, and what you can of Desktop. Reply with hash and pass/fail per item above.

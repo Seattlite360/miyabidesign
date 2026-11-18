@@ -151,7 +151,7 @@ const CSS = `
 .mz .acc-btn{color:#9a9a9a;transition:color .35s}
 .mz .acc-btn[aria-expanded="true"]{color:#000}
 .mz .acc-btn.sel{color:#9a9a9a;transition:color .35s}
-.mz .acc-btn.sel[aria-pressed="true"]{color:#000}
+.mz .acc-btn.sel[aria-pressed="true"]{color:#000}.mz .acc-btn.sel{padding-bottom:4px}.mz .dev-line{margin:0;padding:0 0 24px;font-size:16px;font-weight:300;line-height:1.5}
 .mz .acc-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
 .mz .acc-panel>div{overflow:hidden}
 .mz .acc-btn[aria-expanded="true"]+.acc-panel{grid-template-rows:1fr}
@@ -311,12 +311,12 @@ const HTML = `<div class="mz">
     <div class="head"><h2>The developer build.</h2></div>
     <div class="dev">
       <div class="acc" id="acc">
-        <div class="acc-item"><button class="acc-btn sel" id="ab-0" aria-pressed="true" data-i="0">Project identity</button></div>
-        <div class="acc-item"><button class="acc-btn sel" id="ab-1" aria-pressed="false" data-i="1">Brochure</button></div>
-        <div class="acc-item"><button class="acc-btn sel" id="ab-2" aria-pressed="false" data-i="2">Site signage and hoarding</button></div>
-        <div class="acc-item"><button class="acc-btn sel" id="ab-3" aria-pressed="false" data-i="3">Display suite materials</button></div>
-        <div class="acc-item"><button class="acc-btn sel" id="ab-4" aria-pressed="false" data-i="4">Project website</button></div>
-        <div class="acc-item"><button class="acc-btn sel" id="ab-5" aria-pressed="false" data-i="5">Launch campaign assets</button></div>
+        <div class="acc-item"><button class="acc-btn sel" id="ab-0" aria-pressed="true" data-i="0">Project identity</button><p class="body muted dev-line">The name, logo and brand system for the project, built around your buyer.</p></div>
+        <div class="acc-item"><button class="acc-btn sel" id="ab-1" aria-pressed="false" data-i="1">Brochure</button><p class="body muted dev-line">A printed brochure and its digital copy, designed around your renders.</p></div>
+        <div class="acc-item"><button class="acc-btn sel" id="ab-2" aria-pressed="false" data-i="2">Site signage and hoarding</button><p class="body muted dev-line">Hoarding and site boards, artworked to print size.</p></div>
+        <div class="acc-item"><button class="acc-btn sel" id="ab-3" aria-pressed="false" data-i="3">Display suite materials</button><p class="body muted dev-line">Brochures, fact sheets and wall graphics for the display suite.</p></div>
+        <div class="acc-item"><button class="acc-btn sel" id="ab-4" aria-pressed="false" data-i="4">Project website</button><p class="body muted dev-line">A single project site with an enquiry form, matched to the brochure.</p></div>
+        <div class="acc-item"><button class="acc-btn sel" id="ab-5" aria-pressed="false" data-i="5">Launch campaign assets</button><p class="body muted dev-line">Social posts, email and print for launch week, all in the project identity.</p></div>
         <div class="acc-item"><button class="acc-btn" id="ab-6" aria-expanded="false" aria-controls="ap-6" data-i="6">Render direction<span class="plus"></span></button><div class="acc-panel" id="ap-6" role="region" aria-labelledby="ab-6"><div><p>We brief and manage the render studio. You approve every shot.</p></div></div></div>
         <p class="after body muted">One-time build per project. No ongoing fees.</p>
       </div>

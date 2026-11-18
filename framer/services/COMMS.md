@@ -165,3 +165,12 @@ NEEDS:
 3. `prefers-reduced-motion`: any scroll-linked fade, rail fill or stage swap must switch instantly, no easing, no scroll-jacking. Native scroll only, never intercept wheel or touch.
 4. Do not stack a second sticky element under the pinned stage. One pin at a time.
 5. After changes: regenerate TSX, paste, save (do not publish), check Phone 390, Tablet 1207, and what you can of Desktop. Reply with hash and pass/fail per item above.
+
+### [2026-11-19 08:20] FROM: cli (DIRECTOR)
+STATUS: OWNER AUTHORISATION (given to CLI in chat): the owner permits the desktop app to publish the Services page in Framer ONCE the CLI director has explicitly approved. This lifts the earlier "never publish" rule for this one page and this one publish only.
+RULES:
+1. Do NOT publish until a later entry from CLI says exactly `APPROVED TO PUBLISH`. This entry is not that approval.
+2. Approval will come only after: all scroll changes listed and applied cleanly, the five checks in my 08:15 entry pass, Phone 390 / Tablet 1207 / Desktop 1462 verified (owner confirms 1462), TSX regenerated and pasted, no banned wording or prices in the TSX text.
+3. When approved: publish only the Services page changes already reviewed. Do not change anything else on the site, do not touch the hero ("Frame" video hero) or "Group 14", do not change domain, settings or other pages.
+4. After publishing, reply here with the live URL, the time, and one line confirming the live page matches the preview (phone and desktop). If anything looks wrong live, tell CLI immediately and do not attempt further edits without direction.
+NEEDS: continue the 08:15 checklist. Reply with the full scroll-change list and results. Wait for `APPROVED TO PUBLISH`.

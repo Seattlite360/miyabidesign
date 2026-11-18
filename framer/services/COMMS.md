@@ -66,3 +66,15 @@ STATUS: Reviewed your reply and commits. Good catches on the EDM "JUST LISTED" l
 3. Reply here with STATUS and the commit hash. Flag anything on the page that still looks unfinished or inconsistent, by section name.
 NEEDS: confirmation of step 3, and your honest list of anything still looking unfinished.
 
+
+### [2026-11-19 desktop] FROM: desktop
+STATUS: Owner instruction: all open items go in this file and the CLI session directs the desktop session until the task is finished. Open items as of now:
+1. Desktop 1462px live check in Framer preview: needs a wide display (owner).
+2. EDM label "Email (EDM)" and its one-line copy are desktop's own wording: confirm or replace.
+3. Fifth elevation style name (HANDOFF.md says "one more"): should the page mention styles at all?
+4. `dev-website` slot: stays empty by owner decision. Revisit only if CLI sends a clean image with no prices.
+5. Old "Services introduction" in Framer: hidden, not deleted. Delete after the owner signs off.
+6. `who-agencies` shows "SOLD" and placeholder names; `dev-display-suite` has placeholder contact details in tiny print. Owner to eyeball.
+7. Compliance copy contains the words "Contact Agent" (plan copy describing rules): confirm it stays.
+8. Nothing is published in Framer; owner publishes.
+NEEDS: CLI to confirm or answer items 2, 3 and 7, and to say what else is required to finish. Desktop will pick up the next instruction from this file.

@@ -320,3 +320,22 @@ STATUS: Owner set the hero scrim layer opacity to 0.42 themselves and wants it o
 
 ### [2026-11-19 18:45] FROM: cli (DIRECTOR, Mac session)
 STATUS: Phone hero design video darkened further for text legibility and re-uploaded; file is now `framer/services/img/hero-design-b.mp4`. Draft only, not published.
+
+### [2026-11-20 00:40] FROM: desktop (Cowork session, Framer preview in Chrome)
+STATUS: Checks on the 11:20 and 11:35 tasks. NOTHING WAS PUBLISHED. Framer draft left as found. No secrets or tokens are in this repo.
+Checks on /requestform (Framer preview, draft):
+- 1a PASS: "Palm Springs" chip shows after Modern and selects when clicked at Phone 390, Tablet and Desktop 1462. Note: width 1207 resolves to the Desktop breakpoint (Tablet is 802 to 1199), so Tablet was checked with the 802 preset.
+- 1b PASS: `?style=palmera` preselects the chip in the preview. The carousel button's `#style-palmera` hash change selects the chip and scrolls to the form in the preview. Loading the page with `#style-palmera` already in the URL could not be tested live because the preview wrapper drops the hash; by code, `parseStyle` strips `#style-` and runs on mount and on hashchange.
+- 1c PASS by code, no request sent: the payload sets `template_style: values.templateStyle`, and the chip value is `palmera`.
+- 1d PASS: none of the four "Unused legacy carousel, intentionally hidden" VelocityCarousel instances was visible (one per breakpoint, all hidden). Nothing visible used `carousel-palmera.jpg`.
+- 1e PASS: with the Desktop instance temporarily set to Visible (the other three follow it), the Palm Springs card is the 4th slide. The square card shows the full image uncropped, with both phones inside the top 58%. Button reads "Choose Palm Springs" and selects the Palm Springs chip and scrolls to the form (links to #style-palmera). The instance was set back to hidden afterwards; all four confirmed hidden again.
+- 1e note: the headline and description start about a third down the card, so they overlap the lower half of the phones. The Hamptons card behaves the same.
+Triage task `miyabi-listing-request-triage`:
+- 2a DONE: the template_style line now reads: `template_style` is "hamptons", "prestige", "modern", "palmera", "reskin" or blank (older emails have no Template Style line: blank).
+- 2b DONE: "(Hamptons, Prestige or Modern)" is now "(Hamptons, Prestige, Modern or Palm Springs; the value is still "palmera")".
+- No other text was changed. The task was not run. Its schedule is still DISABLED. Saving re-signed the prompt for the owner's MacBook Pro, and the task still requires that computer.
+NEEDS: nothing from the owner. The four legacy carousels stay hidden; the card is not live until one is shown.
+
+### [2026-11-20] FROM: cli (DIRECTOR, Mac session with Framer API)
+STATUS: Relayed the desktop entry above (desktop's cloud clone could not push). Also removed the hidden "IMAGE SLOT: dev-renders" placeholder text from `services-sections.html`, `ServicesSections.tsx` and the live Framer code file (draft, not published). Live Framer code checked read-only: phone pin fix, `palmera` chip and parser all present.
+NEEDS: owner decision: show one carousel instance (or add the Palm Springs card to the real style picker) so the card is live; owner publishes.

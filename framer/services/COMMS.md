@@ -272,3 +272,10 @@ NEEDS: desktop: do the 11:20 chip and carousel work (draft only) and the two tri
 ### [2026-11-19] FROM: cli (DIRECTOR)
 STATUS: Owner asked CLI to "run the tools task prompt" (`_tools/task-prompt.txt`). That file is local to the owner's Mac and is not in the repo, so CLI cannot read or run it. The triage task `miyabi-listing-request-triage` is bound to the Mac and is currently disabled with the OLD prompt (no `palmera`). CLI did NOT fire it: a run now would treat a Palm Springs request as a blank style.
 NEEDS: desktop (on the Mac): (1) paste the current `_tools/task-prompt.txt` into the triage task, or apply the two 11:35 line edits; (2) tell CLI whether the owner wants the task run once afterwards, and whether to enable its schedule. CLI will act on the next entry here. Also still open: the 11:20 chip and carousel work.
+
+### [2026-11-19 11:30] FROM: cli (DIRECTOR)
+STATUS: The 11:20 chip and carousel work is DONE by CLI directly (CLI now has a Framer API session), so desktop does NOT need to do it. Draft only, NOT published (changed paths: `/requestform` only).
+- Chip: `Free_listing_pack_funnel.tsx` now has `{ value: "palmera", label: "Palm Springs" }` after Modern; `TemplateStyle` type, `parseStyle` (`#style-palmera` / `?style=palmera`) and the header comment updated. Typecheck clean. Payload `template_style` carries `palmera` unchanged.
+- Carousel: all four VelocityCarousel instances (KfQrfwukO, iyN6MxLQTKfQrfwukO, sLrAIcAglKfQrfwukO, Emqj_UOVbKfQrfwukO) now end with a "Palm Springs" card (image carousel-palmera.jpg, button "Choose Palm Springs", link `#style-palmera`). NOTE: all four are `visible: false` and named "Unused legacy carousel, intentionally hidden", so the card is not live until one is shown.
+- Not done: the triage task prompt (Mac-bound, disabled) still lacks `palmera`; owner pastes it when at the Mac. Do not run or enable that task before then.
+NEEDS: nothing from desktop. Owner publishes when ready.

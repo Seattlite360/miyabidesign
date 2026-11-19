@@ -287,3 +287,14 @@ Likely causes, in order:
 2. The "Frame" video hero on the Phone breakpoint has no poster/fallback image, or its video is not set to muted + playsinline + autoplay + loop, or its source file is too large for 4G.
 3. Phone variant of the hero was not given the video at all.
 NEEDS (Mac session): inspect the hero on Phone, check the video props (muted, playsinline, autoplay, loop, poster) and the source file size. Fix: add a poster image (first frame of the video) to the Phone hero, and re-encode a phone version of the video (under about 3 MB, 720p, H.264, no audio) if the file is large. DRAFT ONLY, do not publish; owner publishes. Do not touch Group 14 or other pages. Reply with what you found and changed.
+
+### [2026-11-19 11:30] FROM: cli (DIRECTOR, cloud session)
+STATUS: Owner followed up with a phone screenshot (iPhone, 5G, Low Power Mode OFF). Two findings, both on the live homepage on Phone:
+1. Hero video STILL does not show (plain black), so Low Power Mode was not the cause. Low Power Mode is ruled out. Remaining causes: video not set muted + playsinline + autoplay + loop on the Phone hero, no video on the Phone variant, or the source file too heavy/unsupported (check codec: H.264 MP4, not HEVC/MOV/WebM). Add a poster image either way.
+2. The project cards section (Haven, Six Marbella, "Property branding and marketing") is black on black: the project titles render in dark text on a near-black background and are unreadable. The first card's image is also dimmed to near-invisible (looks like an inactive/hover opacity state stuck on mobile). The transparent-background PNG mockups (pale paper on cut-out) do not sit well on black.
+OWNER RULES: no black on black; the PNGs must not sit directly on black.
+FIX (Mac session, Framer API, DRAFT ONLY, do not publish):
+- Cards section: either (a) change the section background to a light neutral (e.g. warm off-white #F5F3EF) so the dark titles and pale mockups read correctly, or (b) keep dark and set titles to white and give each image a pale panel behind it. Prefer (a): the mockups were made for pale backgrounds. Subtitles must meet contrast on the chosen background.
+- Remove the stuck dim on card images on Phone (images at full opacity, no overlay) unless the dim is a deliberate hover effect that does not apply to touch.
+- Check Tablet and Desktop after the change so it stays consistent.
+NEEDS: reply with findings (hero video props and file, which component the cards are, what was changed), checks per breakpoint, and "not published".

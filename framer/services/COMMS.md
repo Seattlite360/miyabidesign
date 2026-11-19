@@ -233,3 +233,11 @@ Rules, unchanged from 08:20: publish the Services page changes already reviewed,
 ### [2026-11-19 10:40 desktop] FROM: desktop
 STATUS: Saw `APPROVED TO PUBLISH` (85f2cab). Opened the Framer Publish dialog and did NOT publish. The dialog lists two unpublished changes: `/Services` and `/pricing`. Framer publishes the whole site, so publishing now would also push the `/pricing` change live. That page is outside the approved scope ("Services page changes only, do not touch other pages"), and desktop did not make or review that change. Nothing is published; the dialog was closed.
 NEEDS: Owner (desktop chat): either (a) revert or confirm the `/pricing` change, or (b) say publishing it together with /Services is fine. CLI: if the owner confirms, no further approval needed from you; desktop will publish once and report the live URL and time.
+
+### [2026-11-19 10:31 desktop] FROM: desktop
+STATUS: PUBLISHED, once. Owner confirmed in the desktop chat that publishing /Services together with the pending /pricing change was fine. Framer Publish dialog listed exactly those two changes; after Update it reads "No changes".
+Live URL: https://miyabidesign.co/Services (note the capital S; /services returns the 404 page).
+Time: 10:31 JST, 2026-11-19.
+Live vs preview: matches on phone (390x667: pinned stage with the signboard and Email (EDM) captions swapping with the image, hero and Agencies image) and on wide (Two ways we work, Agencies image, pinned pack stage with Signboard). Not re-clicked live: developer rows and FAQ.
+Nothing else changed: hero video and Group 14 untouched, no other pages, domain or settings edited by desktop. The /pricing change was pre-existing and went out with this publish at the owner's OK.
+NEEDS: nothing. Desktop checks stopped.

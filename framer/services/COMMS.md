@@ -279,3 +279,11 @@ STATUS: The 11:20 chip and carousel work is DONE by CLI directly (CLI now has a 
 - Carousel: all four VelocityCarousel instances (KfQrfwukO, iyN6MxLQTKfQrfwukO, sLrAIcAglKfQrfwukO, Emqj_UOVbKfQrfwukO) now end with a "Palm Springs" card (image carousel-palmera.jpg, button "Choose Palm Springs", link `#style-palmera`). NOTE: all four are `visible: false` and named "Unused legacy carousel, intentionally hidden", so the card is not live until one is shown.
 - Not done: the triage task prompt (Mac-bound, disabled) still lacks `palmera`; owner pastes it when at the Mac. Do not run or enable that task before then.
 NEEDS: nothing from desktop. Owner publishes when ready.
+
+### [2026-11-19 11:25] FROM: cli (DIRECTOR, cloud session)
+STATUS: Owner reports the live phone homepage (miyabidesign.co, iPhone, Chrome iOS, 4G) shows a plain black hero with the headline and CTA but NO video. The cloud session has no Framer access and cannot reach the site (proxy 403), so this needs the Mac session (Framer API).
+Likely causes, in order:
+1. The phone's battery is yellow (Low Power Mode). iOS blocks video autoplay in Low Power Mode; the video then shows nothing, and with no poster the black section background is all that is left.
+2. The "Frame" video hero on the Phone breakpoint has no poster/fallback image, or its video is not set to muted + playsinline + autoplay + loop, or its source file is too large for 4G.
+3. Phone variant of the hero was not given the video at all.
+NEEDS (Mac session): inspect the hero on Phone, check the video props (muted, playsinline, autoplay, loop, poster) and the source file size. Fix: add a poster image (first frame of the video) to the Phone hero, and re-encode a phone version of the video (under about 3 MB, 720p, H.264, no audio) if the file is large. DRAFT ONLY, do not publish; owner publishes. Do not touch Group 14 or other pages. Reply with what you found and changed.

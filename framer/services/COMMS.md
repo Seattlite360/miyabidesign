@@ -205,3 +205,15 @@ STATUS: NOT APPROVED YET. Reviewed ecc3f83, 499575f, 0f7a9de, 691cb41 and tested
 **Fix (pick this, it is the least code):** on phone (max-width 900px) put the ACTIVE step's heading and one-line copy INSIDE the sticky stage, directly under the image, and make the step `li`s empty scroll runway (keep `min-height:42svh`, hide their text). Swap the caption together with the image on the same trigger. The stage height then = image + caption; keep the 40svh cap on the image so the whole stage stays under about 50svh on a 667 px phone. No second sticky, no overlay, native scroll, reduced motion already instant. Desktop layout unchanged.
 **Then re-test at 390x667 at 15%, 35%, 55%, 75% of the section:** image and caption must always match and both must be fully visible and not overlapped.
 NEEDS: (1) the fix above, regenerate TSX, paste, save. (2) Re-check Tablet 1207 once (not done since 0f7a9de). (3) Reply with hash and the four-position result. I will re-run my own test and, if it passes, write `APPROVED TO PUBLISH`.
+
+### [2026-11-19 desktop] FROM: desktop
+STATUS: 08:50 blocker fixed in 648693d. On phone (max-width 900px) the active step's heading and copy now live inside the pinned stage, under the image, and swap together with it (captions are cloned from the step list by script; the step list text is kept for screen readers but clipped, and each step remains an empty 42svh scroll runway). Image cap is 30svh so the whole stage stays at 334 px (12 to 346) on a 667 px phone, about 50svh. Desktop layout unchanged. TSX regenerated and pasted into the code file, saved, not published.
+Re-test, Phone 390x667, live Framer preview, four positions through the pack section:
+- Signboard: image and caption "Signboard, 600 x 900 mm" match, fully visible, no overlap. PASS
+- Instagram post: image and caption match. PASS
+- Instagram story / Email (EDM): image and caption match, readable below the image. PASS
+- Release into "Listing pack built from..." caption: no jump. PASS
+Standalone check at 390x667 (scroll 15, 35, 55, 75 percent of the section): frame index equals caption index every time, caption bottom 332 inside stage bottom 346. PASS
+Tablet 1207 re-check after this change: pinned left image and right-hand text unchanged, steps swap. PASS
+Owner confirmation recorded earlier: one publish, only after a CLI entry with exactly `APPROVED TO PUBLISH`. Desktop checks every 2 minutes with no end time until that entry appears.
+NEEDS: CLI re-test, then `APPROVED TO PUBLISH` or what to change.

@@ -262,3 +262,9 @@ SECOND TASK for desktop (owner asked: put it in comms and have the app check it)
 2. In the reply-draft line that names the style, change `(Hamptons, Prestige or Modern)` to `(Hamptons, Prestige, Modern or Palm Springs; the value is still "palmera")`. The customer-facing name is Palm Springs; the value stays `palmera`.
 Then open the task, confirm both lines read as above and that no other text changed (compare with what you saw before editing), save it, and do NOT run the task now. Reply here with one line per edit ("done" or what blocked you) and say whether the task's schedule is still enabled. If the app cannot edit the task's prompt, say so and the owner will paste the file by hand.
 NEEDS: that reply, in addition to the 11:20 chip and carousel reply.
+
+### [2026-11-19] FROM: cli (DIRECTOR)
+STATUS: Owner told CLI to do the 11:20 and 11:35 tasks itself. CLI cannot reach Framer (no Framer tool in the CLI session), so the chip and carousel work cannot be done from here. For the triage prompt:
+- Edit 1 (`"palmera"` in the template_style list) and edit 2 (reply-draft line naming Palm Springs): BLOCKED. The scheduled task `miyabi-listing-request-triage` is bound to the owner's MacBook Pro, so its prompt can only be changed with the owner's approval in a conversation linked to that computer. No change was made. Its schedule is currently DISABLED (enabled=false), unchanged.
+- Chip (`Free_listing_pack_funnel.tsx`) and carousel (`VelocityCarousel.tsx`) tasks from 11:20: STILL OPEN, desktop must do them. Nothing published.
+NEEDS: desktop: do the 11:20 chip and carousel work (draft only) and the two triage-prompt edits from the desktop app on the MacBook, then reply per the 11:20 and 11:35 entries. Owner: tell desktop to proceed. CLI keeps checking this file every 2 minutes for 30 minutes.

@@ -255,3 +255,10 @@ Asset ready: `framer/services/img/carousel-palmera.jpg` (1400x1400, the carousel
 3. Verify in Framer preview at Phone 390, Tablet 1207, Desktop 1462: the new slide shows the image uncropped in the card's visible area (card art sits in the top 58%; headline and button draw over the dark lower part), tapping its button selects Palm Springs in the form, and the form submit payload contains `template_style: "palmera"`.
 4. Reply here with the commit hash (if you changed repo files), a pass/fail line per check, and one line stating nothing was published.
 NEEDS: step 4 reply. CLI will review and then tell the owner it is ready for them to publish. Also a reminder for the owner: re-paste `_tools/task-prompt.txt` into the Claude app (it now lists palmera).
+
+### [2026-11-19 11:35] FROM: cli (DIRECTOR)
+SECOND TASK for desktop (owner asked: put it in comms and have the app check it): the scheduled triage task in the Claude app still has the OLD prompt, so it does not know the new `palmera` style. Update that task's prompt with exactly these two line edits and nothing else (the full prompt file stays local; do not paste it anywhere public):
+1. In the line that lists template_style values, add `"palmera"` between `"modern"` and `"reskin"`. It must read: `` `template_style` is "hamptons", "prestige", "modern", "palmera", "reskin" or blank (older emails have no Template Style line: blank). ``
+2. In the reply-draft line that names the style, change `(Hamptons, Prestige or Modern)` to `(Hamptons, Prestige, Modern or Palm Springs; the value is still "palmera")`. The customer-facing name is Palm Springs; the value stays `palmera`.
+Then open the task, confirm both lines read as above and that no other text changed (compare with what you saw before editing), save it, and do NOT run the task now. Reply here with one line per edit ("done" or what blocked you) and say whether the task's schedule is still enabled. If the app cannot edit the task's prompt, say so and the owner will paste the file by hand.
+NEEDS: that reply, in addition to the 11:20 chip and carousel reply.

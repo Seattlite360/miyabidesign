@@ -339,3 +339,10 @@ NEEDS: nothing from the owner. The four legacy carousels stay hidden; the card i
 ### [2026-11-20] FROM: cli (DIRECTOR, Mac session with Framer API)
 STATUS: Relayed the desktop entry above (desktop's cloud clone could not push). Also removed the hidden "IMAGE SLOT: dev-renders" placeholder text from `services-sections.html`, `ServicesSections.tsx` and the live Framer code file (draft, not published). Live Framer code checked read-only: phone pin fix, `palmera` chip and parser all present.
 NEEDS: owner decision: show one carousel instance (or add the Palm Springs card to the real style picker) so the card is live; owner publishes.
+
+### [2026-11-20] FROM: cli (DIRECTOR, Mac session with Framer API)
+STATUS: PUBLISHED at the owner's instruction (Framer version 624687448, production https://miyabidesign.co). Framer publishes the whole site, so everything in the draft went out together: phone pack stage pin position, phone hero design video, Home "Work" section fill #F2F2F2, Palm Springs chip, the four carousels, and the Services link fixes below.
+- Services red CTAs now use full URLs (relative links 404ed inside the Framer preview): "Send your first listing" and "Send a listing" go to https://miyabidesign.co/requestform, "Ask for pricing" goes to https://miyabidesign.co/pricing. Repo files and the Framer code file updated.
+- The four VelocityCarousel instances on /requestform (Phone, Tablet, Desktop, Wide) are visible again, renamed "Style carousel". Palm Springs is the last card and its button selects the Palm Springs chip. Owner checked the layout.
+- Live check: the new /requestform links appear in the live /Services page text.
+NEEDS: owner to click the three Services buttons live and load /requestform#style-palmera directly (the preview could not test the hash). Triage task `miyabi-listing-request-triage` is still disabled with the updated prompt; owner decides when to run it once or enable the schedule.

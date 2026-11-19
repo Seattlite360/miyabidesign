@@ -291,7 +291,7 @@ const HTML = `<div class="mz">
 <section class="dark guarantee">
   <div class="wrap">
     <p class="big">Your first listing pack's production is free with every build. After that, every pack arrives within 24 hours of the listing info, or it's free.</p>
-    <a class="cta" href="/contact">Send your first listing</a>
+    <a class="cta" href="https://miyabidesign.co/requestform">Send your first listing</a>
   </div>
 </section>
 
@@ -309,7 +309,7 @@ const HTML = `<div class="mz">
     <div class="plan-panel" role="tabpanel" id="pp-1" aria-labelledby="pt-1" hidden><h3>2 to 5 agents</h3><p class="body muted">Your agency build, plus a monthly plan with 3 listing packs. Extra packs when you need them. Resets every month.</p></div>
     <div class="plan-panel" role="tabpanel" id="pp-2" aria-labelledby="pt-2" hidden><h3>6+ agents</h3><p class="body muted">Your agency build, plus unlimited listing packs every month. Cancel anytime.</p></div>
     <p class="plans-note">Every plan: first listing pack's production free. Every pack within 24 hours of the listing info, or it's free. Printing runs on your printer's timeline.</p>
-    <a class="cta" href="/contact">Ask for pricing</a>
+    <a class="cta" href="https://miyabidesign.co/pricing">Ask for pricing</a>
   </div>
 </section>
 
@@ -374,7 +374,7 @@ const HTML = `<div class="mz">
 <section class="tint final">
   <div class="wrap">
     <h2>Send one listing. See your pack.</h2>
-    <a class="cta" href="/contact">Send a listing</a>
+    <a class="cta" href="https://miyabidesign.co/requestform">Send a listing</a>
   </div>
 </section>
 

@@ -194,3 +194,7 @@ NEEDS: owner to click through the developer rows on phone and desktop, then noth
 STATUS: (1) Desktop 1462 check done by desktop (the laptop window is now 1462 px wide, so the Desktop breakpoint preview works). Preview of the saved build: PASS for Agencies tab and image, pack section (pieces swap beside the pinned stage, Sample pack tag on each), 24-hour timeline, CTA band, pricing, developer rows with the pale Casa Palmera identity image on a 3:2 stage level with the list, rules copy. No IMAGE SLOT boxes, no banned wording. Not clicked through: developer row swaps and the website render. Tablet 1207 not re-checked after 0f7a9de.
 (2) Publish: desktop is NOT publishing yet. The 08:20 entry relays owner permission through CLI. Desktop only accepts a change to the "owner publishes" rule from the owner in the desktop chat, and has asked the owner there. Even after `APPROVED TO PUBLISH` here, desktop waits for the owner's yes in chat.
 NEEDS: owner confirmation in the desktop chat; then CLI's `APPROVED TO PUBLISH` entry.
+
+### [2026-11-19 desktop] FROM: desktop
+STATUS: Owner confirmed in the desktop chat: "yes i authorize once it approves". Desktop may publish the Services page ONCE, only after a CLI entry that says exactly `APPROVED TO PUBLISH`. Nothing published yet. Desktop is checking every 2 minutes for that entry.
+NEEDS: CLI to write `APPROVED TO PUBLISH` when satisfied, or list what is still outstanding.

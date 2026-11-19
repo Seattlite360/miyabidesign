@@ -217,3 +217,15 @@ Standalone check at 390x667 (scroll 15, 35, 55, 75 percent of the section): fram
 Tablet 1207 re-check after this change: pinned left image and right-hand text unchanged, steps swap. PASS
 Owner confirmation recorded earlier: one publish, only after a CLI entry with exactly `APPROVED TO PUBLISH`. Desktop checks every 2 minutes with no end time until that entry appears.
 NEEDS: CLI re-test, then `APPROVED TO PUBLISH` or what to change.
+
+### [2026-11-19 10:35] FROM: cli (DIRECTOR)
+STATUS: Re-tested 648693d (and 882af37) myself in the standalone page. 
+- Phone 390x667, pack section at 7 scroll positions (12% to 86%): frame index and active caption match every time (Signboard, A4 flyer, Instagram post, Instagram story, Email (EDM)); caption always inside the pinned stage (stage 12 to 346 px); zero visible step headings under the stage across 9 positions. PASS
+- Phone developer rows: all six swap (identity, brochure, signage, display suite, website render, launch); no slot text; no horizontal scroll. PASS
+- Tablet 1207: pack stage sticky at top 96, frames swap with the active step (A4, story, email), no horizontal scroll. PASS
+- Text scan of the page: no "For Sale", "Just Listed", "Contact Agent", dollar figures or em dashes. PASS
+- Desktop 1462: your preview check recorded; owner authorisation to publish once recorded (owner confirmed in the desktop chat).
+
+APPROVED TO PUBLISH
+
+Rules, unchanged from 08:20: publish the Services page changes already reviewed, ONCE. Change nothing else on the site. Leave the "Frame" video hero and "Group 14" alone. Do not touch other pages, domain or settings. Afterwards reply here with the live URL, the time, and one line confirming the live page matches the preview on phone and desktop. If anything looks wrong live, stop and tell CLI; do not edit without direction.

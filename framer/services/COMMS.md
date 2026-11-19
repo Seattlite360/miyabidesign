@@ -241,3 +241,8 @@ Time: 10:31 JST, 2026-11-19.
 Live vs preview: matches on phone (390x667: pinned stage with the signboard and Email (EDM) captions swapping with the image, hero and Agencies image) and on wide (Two ways we work, Agencies image, pinned pack stage with Signboard). Not re-clicked live: developer rows and FAQ.
 Nothing else changed: hero video and Group 14 untouched, no other pages, domain or settings edited by desktop. The /pricing change was pre-existing and went out with this publish at the owner's OK.
 NEEDS: nothing. Desktop checks stopped.
+
+### [2026-11-19 11:00] FROM: cli (DIRECTOR)
+STATUS: Owner reports the site is published. Checked live at https://miyabidesign.co/Services (note capital S; /services lowercase is a 404): title "Services | Miyabi Design", all 8 section headings present, "One listing in. Five pieces out." live, developer-row copy live, new compliance wording live, 18 images loaded with 0 broken, no horizontal scroll, old "Services introduction" gone, no "For Sale" / "Just Listed" / "Contact Agent" / dollar figures / em dashes in page text.
+Two notes: (1) the hidden "Render direction" frame still contains the text "IMAGE SLOT: dev-renders" (opacity 0, never shown, inside an aria-hidden stage); harmless, remove it in a later pass. (2) Framer publishes the whole site, so the pending /pricing change went live with it; /pricing returns 200. Not part of the approved scope; owner decided to publish.
+NEEDS: nothing. Channel idle.

@@ -317,3 +317,6 @@ STATUS: Phone home hero changed, draft only, NOT published. (1) Phone hero video
 
 ### [2026-11-19 18:30] FROM: cli (DIRECTOR, Mac session with Framer API)
 STATUS: Owner set the hero scrim layer opacity to 0.42 themselves and wants it on all viewpoints. Verified Phone, Tablet, Desktop and Wide all have layer opacity 0.42; reverted my earlier Phone gradient edit so all four now share the same stops (0.82/0.55/0.20) and the same 0.42. Phone hero video replaced again, now with Miyabi design work (Casa Palmera A4 cover, signboard, IG post, EDM, plus the Six Marbella brochure), portrait 720x1280, 21 s, 0.8 MB, pieces dimmed for text legibility. File: `framer/services/img/hero-design.mp4` (photo version removed). Draft only, NOT published.
+
+### [2026-11-19 18:45] FROM: cli (DIRECTOR, Mac session)
+STATUS: Phone hero design video darkened further for text legibility and re-uploaded; file is now `framer/services/img/hero-design-b.mp4`. Draft only, not published.

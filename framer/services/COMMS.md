@@ -311,3 +311,6 @@ STATUS: Cards fix DONE in the Framer draft, NOT published. Hero video NOT change
 
 ### [2026-11-19 17:50] FROM: cli (DIRECTOR, Mac session with Framer API)
 STATUS: Owner reported the Phone pack stage holds too high (image top clipped under the browser/site header). Changed the Phone `.sync-stage` pin from `top:12px` to `top:max(88px,calc(50svh - 195px))` so it holds clear of the header, roughly centered. Tested at 390x844 (pins at 227px, bottom 614px, held to the end of the section) and 390x667 (139px). Updated `services-sections.html` and `ServicesSections.tsx` in the repo and the Framer code file ServicesSections.tsx (draft). Not published. Desktop untouched.
+
+### [2026-11-19 18:10] FROM: cli (DIRECTOR, Mac session with Framer API)
+STATUS: Phone home hero changed, draft only, NOT published. (1) Phone hero video replaced with a portrait 720x1280 H.264 video (21 s, 2.1 MB, no audio) built from five real Casa Palmera photos with slow zoom and crossfades; no text on it, no AI. Source file `framer/services/img/hero-portrait.mp4`. It replaces the third-party template screen recording on Phone only (Desktop, Tablet and Wide unchanged). (2) Phone hero scrim (the shadow behind the text) lowered from 0.82/0.55/0.20 to 0.60/0.40/0.15. Phone screenshot checked: text still legible. Muted, autoplay, loop unchanged.

@@ -81,13 +81,20 @@
 .mz .sync-steps li{min-height:64vh;display:flex;flex-direction:column;justify-content:center;gap:16px;opacity:.35;transition:opacity .35s}
 .mz .sync-steps li.on{opacity:1}
 .mz .sync-steps .mobile-slot{display:none}
+.mz .sync-stage .caps{display:none}
 .mz .caption{margin-top:48px;color:var(--muted);font-size:16px}
 @media (max-width:900px){
   .mz .sync{grid-template-columns:1fr;gap:0}
-  .mz .sync-stage{top:12px;z-index:2;padding:12px 0 16px;background:var(--tint)}
-  .mz .sync-stage .stack{width:min(100%,calc(40svh * 4 / 5.2),300px)}
-  .mz .sync-steps li{min-height:42svh;justify-content:flex-start;padding-top:20px;gap:8px}
+  .mz .sync-stage{top:12px;z-index:2;flex-direction:column;align-items:center;gap:10px;padding:12px 0 14px;background:var(--tint)}
+  .mz .sync-stage .stack{width:min(100%,calc(30svh * 4 / 5.2),300px)}
+  .mz .sync-stage .caps{display:grid;width:100%}
+  .mz .sync-stage .cap{grid-area:1/1;opacity:0;transition:opacity .35s ease-out}
+  .mz .sync-stage .cap.on{opacity:1}
+  .mz .sync-stage .cap h3{margin:0 0 6px}
+  .mz .sync-stage .cap p{margin:0;font-size:15px;line-height:1.45;color:var(--muted)}
+  .mz .sync-steps li{position:relative;min-height:42svh;padding:0}
   .mz .sync-steps li:last-child{min-height:60svh}
+  .mz .sync-steps li > h3,.mz .sync-steps li > p{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 }
 
 /* ===== 3. 24-hour rail ===== */
@@ -423,9 +430,19 @@
   /* Section 2: scroll sync */
   var steps = [].slice.call(document.querySelectorAll('.sync-steps li'));
   var frames = [].slice.call(document.querySelectorAll('.sync-stage .frame'));
+  var stageEl = document.querySelector('.sync-stage');
+  var capsWrap = document.createElement('div'); capsWrap.className = 'caps'; capsWrap.setAttribute('aria-hidden', 'true');
+  var caps = steps.map(function(s, j){
+    var c = document.createElement('div'); c.className = 'cap' + (j === 0 ? ' on' : '');
+    var h = s.querySelector('h3'), p = s.querySelector('p');
+    if(h) c.appendChild(h.cloneNode(true)); if(p) c.appendChild(p.cloneNode(true));
+    capsWrap.appendChild(c); return c;
+  });
+  if(stageEl) stageEl.appendChild(capsWrap);
   function setSync(i){
     steps.forEach(function(s, j){ s.classList.toggle('on', i === j); });
     frames.forEach(function(f, j){ f.classList.toggle('on', i === j); });
+    caps.forEach(function(c, j){ c.classList.toggle('on', i === j); });
   }
   function syncCheck(){
     var st = document.querySelector('.sync-stage');

@@ -229,3 +229,7 @@ STATUS: Re-tested 648693d (and 882af37) myself in the standalone page.
 APPROVED TO PUBLISH
 
 Rules, unchanged from 08:20: publish the Services page changes already reviewed, ONCE. Change nothing else on the site. Leave the "Frame" video hero and "Group 14" alone. Do not touch other pages, domain or settings. Afterwards reply here with the live URL, the time, and one line confirming the live page matches the preview on phone and desktop. If anything looks wrong live, stop and tell CLI; do not edit without direction.
+
+### [2026-11-19 10:40 desktop] FROM: desktop
+STATUS: Saw `APPROVED TO PUBLISH` (85f2cab). Opened the Framer Publish dialog and did NOT publish. The dialog lists two unpublished changes: `/Services` and `/pricing`. Framer publishes the whole site, so publishing now would also push the `/pricing` change live. That page is outside the approved scope ("Services page changes only, do not touch other pages"), and desktop did not make or review that change. Nothing is published; the dialog was closed.
+NEEDS: Owner (desktop chat): either (a) revert or confirm the `/pricing` change, or (b) say publishing it together with /Services is fine. CLI: if the owner confirms, no further approval needed from you; desktop will publish once and report the live URL and time.

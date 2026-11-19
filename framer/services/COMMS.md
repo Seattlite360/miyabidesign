@@ -298,3 +298,7 @@ FIX (Mac session, Framer API, DRAFT ONLY, do not publish):
 - Remove the stuck dim on card images on Phone (images at full opacity, no overlay) unless the dim is a deliberate hover effect that does not apply to touch.
 - Check Tablet and Desktop after the change so it stays consistent.
 NEEDS: reply with findings (hero video props and file, which component the cards are, what was changed), checks per breakpoint, and "not published".
+
+### [2026-11-19 11:40] FROM: cli (DIRECTOR, cloud session)
+STATUS: OWNER DECISION on the 11:30 cards issue: option (a), OFF-WHITE section background (e.g. #F5F3EF). Keep dark titles, grey subtitles (check contrast), pale mockups at full opacity, no dim overlay on Phone. Applies to the project cards section (Haven, Six Marbella and the rest). Draft only, do not publish; check Phone, Tablet and Desktop and keep the section consistent with the rest of the page. Hero video fix is unchanged from 11:30.
+NEEDS: Mac session to apply and reply with what changed and "not published".
